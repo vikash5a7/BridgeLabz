@@ -1,12 +1,10 @@
 package com.BridgeLabz.BasicProgram;
-
-import java.util.Scanner;
+import com.bridgeLabz.util.utility;
 
 public class flipcoin {
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
 		System.out.println("enter how many times do you want to print ?");
-		int numberOfTime = sc.nextInt();
+		int numberOfTime = utility.inputNumber();
 		int counter = 1;
 		double heads = 0;
 		double tails = 0;
