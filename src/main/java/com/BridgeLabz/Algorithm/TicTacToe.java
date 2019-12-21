@@ -8,16 +8,13 @@ import java.util.Scanner;
 
 public class TicTacToe {
 	static boolean status = true;
-	static ArrayList<Integer> playerPositon=new ArrayList<Integer>();
-	static ArrayList<Integer> cpuPosition=new ArrayList<Integer>();
+	static ArrayList<Integer> playerPositon = new ArrayList<Integer>();
+	static ArrayList<Integer> cpuPosition = new ArrayList<Integer>();
+
 	public static void main(String[] args) {
 		boolean status = true;
-		char[][] gamrBoard= {
-		 {' ','|' ,' ', '|', ' '}
-		,{'_','+' ,'_', '+', '_'}
-		,{' ','|' ,' ', '|', ' '}
-		,{'_','+' ,'_', '+', '_'},
-		 {' ','|' ,' ', '|', ' '}};
+		char[][] gamrBoard = { { ' ', '|', ' ', '|', ' ' }, { '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' },
+				{ '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' } };
 		printBoard(gamrBoard);
 		while (status) {
 			@SuppressWarnings("resource")
@@ -36,6 +33,7 @@ public class TicTacToe {
 			if (result.length() >= 0) {
 				System.out.println(result);
 			}
+
 			// generating CPU position and placing piece according to there generating the
 			// CPU position
 			Random rand = new Random();
@@ -141,8 +139,7 @@ public class TicTacToe {
 		}
 
 		return " ";
-		
-	}
-	
-}
 
+	}
+
+}

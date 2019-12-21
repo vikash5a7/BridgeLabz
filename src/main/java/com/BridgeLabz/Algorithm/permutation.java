@@ -1,14 +1,14 @@
 package com.BridgeLabz.Algorithm;
 
-import com.bridgeLabz.util.utility;
+import com.bridgeLabz.util.Utility;
 
 public class permutation {// Java program to print all permutations of a 
 	
 		public static void main(String[] args) 
 		{ 
 		System.out.println("Please enter a String: ");
-		utility.inputName();
-		String str=utility.name;
+		Utility.inputName();
+		String str=Utility.inputName();
 		int n = str.length();
 		permute(str, 0, n-1); 
 		} 

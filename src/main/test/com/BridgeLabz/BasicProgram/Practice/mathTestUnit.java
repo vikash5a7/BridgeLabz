@@ -11,7 +11,7 @@ class mathTestUnit {
 	@Test
 	void test() {
 		math m = new math();
-		int expected = 2;
+		int expected = 3;
 		int actual = m.add(1, 2);
 		assertEquals(expected, actual);
 		

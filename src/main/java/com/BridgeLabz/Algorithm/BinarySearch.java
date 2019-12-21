@@ -1,5 +1,5 @@
 package com.BridgeLabz.Algorithm;
-import com.bridgeLabz.util.utility;
+import com.bridgeLabz.util.Utility;
 public class BinarySearch {
 	// Java program to implement Binary Search for strings
 		static int binarySearch(String[] arr, String x) 
@@ -31,8 +31,8 @@ public class BinarySearch {
 		{ 
 			System.out.println("please eanter a string which you want to search");
 			String[] arr = { "vikash", "ram", "sita", "practice"}; 
-			utility.inputName();
-			String x = utility.name;
+			Utility.inputName();
+			String x = Utility.inputName();
 			int result = binarySearch(arr, x); 
 
 			if (result == -1) 

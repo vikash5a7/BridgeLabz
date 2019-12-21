@@ -1,6 +1,6 @@
 package com.BridgeLabz.Algorithm;
 
-import com.bridgeLabz.util.utility;
+import com.bridgeLabz.util.Utility;
 public class PrimeNumber 
 {
 	public static void main(String[] args) 
@@ -9,9 +9,9 @@ public class PrimeNumber
 		int count = 0;
 		int i;
 		System.out.println("enter your number to find prime number : ");
-		utility.inputNumber();
+		Utility.inputNumber();
 		
-		int num = utility.number;
+		int num = Utility.inputNumber();
 		for (i = 1; i < num; i++)
 		{	
 			count =0;

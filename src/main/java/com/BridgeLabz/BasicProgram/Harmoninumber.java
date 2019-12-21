@@ -1,25 +1,23 @@
+/***********************************************
+ * purpose : To find haramonic number
+ *           
+ * @author  vikash kumar
+ * @version 1.0
+ * @since   20/12/2019          
+ ***********************************************/
 package com.BridgeLabz.BasicProgram;
-import com.bridgeLabz.util.utility;
 public class Harmoninumber
-
 {
-
 	public static void main(String[] args) {
-		System.out.println("Please enter the Nth harmonic value:");
-		int number = utility.inputNumber();
-
-		
-		final float a = 1;
-		double harmonic = 0;
-		if (number > 0) {
-			for (int i = 1; i <= number; i++) {
-				System.out.print(a+ "/" + i + "\t");
-				harmonic = harmonic + a / i;
+		float sum = 0;
+		try {
+			int n = Integer.parseInt(args[0]);
+			for (int i = 1; i <= n; i++) {
+				sum = sum + (float) 1 / i;
+				System.out.println(sum);
 			}
-			System.out.println();
-			System.out.println(number + " Harmonic value:" + harmonic);
-		} else {
-			System.out.println("Enter a number which is greater  0 : ");
+		} catch (Exception e) {
+			System.out.println(e + " \n enter commond line arguments");
 		}
 	}
 }
