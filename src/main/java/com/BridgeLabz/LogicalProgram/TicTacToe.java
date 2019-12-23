@@ -1,4 +1,4 @@
-package com.BridgeLabz.Algorithm;
+package com.BridgeLabz.LogicalProgram;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,21 +8,18 @@ import java.util.Scanner;
 
 public class TicTacToe {
 	static boolean status = true;
-	static ArrayList<Integer> playerPositon = new ArrayList<Integer>();
-	static ArrayList<Integer> cpuPosition = new ArrayList<Integer>();
-
-	@SuppressWarnings("unlikely-arg-type")
+	static ArrayList<Integer> playerPositon = new ArrayList<>();
+	static ArrayList<Integer> cpuPosition = new ArrayList<>();
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		boolean status = true;
+		
 		char[][] gamrBoard = { { ' ', '|', ' ', '|', ' ' }, { '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' },
 				{ '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' } };
 		printBoard(gamrBoard);
 		while (status) {
-			@SuppressWarnings("resource")
-			Scanner sc = new Scanner(System.in);
 			System.out.println("enter your postion in keyboard b/w (1-9)");
 			int playerPos = sc.nextInt();
-			while (playerPositon.contains(playerPos) || cpuPosition.contains(playerPositon)) {
+			while (playerPositon.contains(playerPos) || cpuPosition.contains(playerPos)) {
 				System.out.println("place taken enter correct postion! ");
 				playerPos = sc.nextInt();
 			}
@@ -38,7 +35,6 @@ public class TicTacToe {
 			// generating CPU position and placing piece according to there generating the
 			// CPU position
 			Random rand = new Random();
-			;
 			int cpuPos = rand.nextInt(9) + 1;
 			while (playerPositon.contains(cpuPos) || cpuPosition.contains(cpuPos)) {
 				cpuPos = rand.nextInt(9) + 1;
@@ -95,6 +91,7 @@ public class TicTacToe {
 			gamrBoard[4][4] = symbol;
 			break;
 		default:
+			System.out.println(" ENTER CORRECT NUMBER B/W 1-9");
 			break;
 		}
 	}
@@ -119,7 +116,7 @@ public class TicTacToe {
 		List<Integer> rightCol = Arrays.asList(9, 6, 3);
 		List<Integer> cross1 = Arrays.asList(1, 5, 9);
 		List<Integer> cross2 = Arrays.asList(7, 5, 3);
-		List<List> winning = new ArrayList<List>();
+		List<List> winning = new ArrayList<>();
 		winning.add(topRow);
 		winning.add(midRow);
 		winning.add(botRow);
@@ -130,11 +127,14 @@ public class TicTacToe {
 		winning.add(cross2);
 		for (List<?> l : winning) {
 			if (playerPositon.containsAll(l)) {
+				status =false;
 				return "Congratulation!! you won the Game!!!";
 
 			} else if (cpuPosition.containsAll(l)) {
+				status =false;
 				return " Cpu won ";
 			} else if (playerPositon.size() + cpuPosition.size() == 9) {
+				status =false;
 				return " Draw match";
 			}
 		}

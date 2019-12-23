@@ -2,11 +2,12 @@ package com.BridgeLabz.BasicProgram.practice;
 
 public class Exception {
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		try {
-			// code that may raise exception
+			
 			int data = 100 / 0;
-		} catch (ArithmeticException e) {
+		} 
+		catch (ArithmeticException e) {
 			System.out.println(e);
 			System.out.println("rest of the code...");
 		}
