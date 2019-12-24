@@ -200,4 +200,110 @@ public class Utility {
 		else
 			return false;
 	}
+	
+	/**for finding the Celsius to Fahrenheit: 
+	 * 
+	 * @param fahrenheit
+	 * @return fahrenheit
+	 */
+	 public static double fahrenheittoCelsius(double fahrenheit)
+	 {
+		return ((fahrenheit-32) * 5/9);
+		 
+	 }
+	 /**for finding the Fahrenheit to Celsius
+		 * 
+		 * @param fahrenheit
+		 * @return fahrenheit
+		 */
+	 public static double celsiustoFahrenheit(double celsius)
+	 {
+		return  ((celsius * 9/5)+32 );
+
+		 
+	 }
+	 
+	 /**
+		 * Function to check the day of the week of given date
+		 *
+		 * @param d int value for day of date
+		 * @param m int value for month of year
+		 * @param y int value for year
+		 * @return day of week from 1 to 7
+		 */
+	 	public static int dayOfWeek(int d, int m, int y) {
+			int y0 = y - (14 - m) / 12;
+			int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+			int m0 = m + 12 * ((14 - m) / 12) - 2;
+			return (d + x + (31 * m0) / 12) % 7;
+		
+		}
+	 	/**
+		 * calculating the monthly payments
+		 *
+		 * @param p the principal amount given
+		 * @param y the year for which p is given
+		 * @param r the rate at which p is given
+		 * @return monthly payment
+		 */
+		public static double monthlyPayment(double p, double y, double r) {
+			double n = 12 * y;
+			double r0 = r / (12 * 100);
+			return p * r0 / (1 - Math.pow((1 + r0), -n));
+			
+		}
+		
+		/**
+		 * For finding the square
+		 *
+		 * @param c the value to find square root of
+		 * @return return the square root
+		 */
+		
+		public static double sqrt(double c) {
+
+			double t = c;
+			double epsilon = 1e-15;
+			while (Math.abs(t - c / t) > epsilon * t) {
+				t = (c / t + t) / 2;
+			}
+
+			return t;
+		}
+		
+		/**
+		 * For for finding binary nUmber:
+		 *
+		 * @param n the value to find binary of
+		 * @return return the binaryArray 
+		 */
+		public static int[] decimalToBinary(int number)
+		{
+			int i =0;
+			
+			int[] binarArray = new int[10];
+			while(number!=0)
+			{
+				binarArray[i] = number%2;
+				number = number/2;
+	
+				i++;
+			}
+			return binarArray;
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }

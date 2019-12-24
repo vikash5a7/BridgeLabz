@@ -18,8 +18,8 @@ public class Gambler {
 	 * Function to simulate gamble
 	 * 
 	 * @param n      the value of no of times to bet
-	 * @param $stack the amount which you have
-	 * @param $goal  the value which to reach to win the gamble (not the bet)
+	 * @param stack the amount which you have
+	 * @param goal  the value which to reach to win the gamble (not the bet)
 	 */
 	static void gamble(int noOfTimes, int stack, int goal) {
 		int bets = 0; 

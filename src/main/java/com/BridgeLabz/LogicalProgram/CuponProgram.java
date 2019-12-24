@@ -5,6 +5,7 @@ import java.util.Random;
 import com.bridgeLabz.util.Utility;
 
 public class CuponProgram {
+	 static Random rn = new Random();
 	public static void main(String[] args) {
 		System.out.println("enter how many number do you want to print :");
 		int number = Utility.inputNumber();
@@ -22,20 +23,14 @@ public class CuponProgram {
 		{
 			count++;
 			//Random class
-			Random rn = new Random();
+			
 			// storing all the random value in array
 			for (int i = 0; i < randomGenerateNumber.length; i++) {
 				int randomNumber = rn.nextInt(9) + 1;
-				for (int j = 0 ; j <= i; j++) {
-						if(randomGenerateNumber[i]!= randomGenerateNumber[j])
-						{
-								randomNumber = rn.nextInt(9) + 1;
-						}
-					}
-				}
+				randomGenerateNumber[i] = randomNumber;
+				
 			}
-		
+		}
 		return randomGenerateNumber;
-	}
-
+}
 }
