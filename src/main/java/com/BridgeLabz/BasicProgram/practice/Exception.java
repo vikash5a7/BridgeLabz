@@ -6,6 +6,7 @@ public class Exception {
 		try {
 			
 			int data = 100 / 0;
+			System.out.println(data);
 		} 
 		catch (ArithmeticException e) {
 			System.out.println(e);

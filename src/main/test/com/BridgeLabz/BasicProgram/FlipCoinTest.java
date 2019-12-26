@@ -9,7 +9,7 @@ class FlipCoinTest {
 	@Test
 	void test() {
 		double[] actual = FlipCoin.percentageOfHeadAndTail(2);
-		for (double d : actual) {
+		for (@SuppressWarnings("unused") double d : actual) {
 			FlipCoin.percentageOfHeadAndTail(5);
 		}
 		double[] expected = {5.0,5.0};

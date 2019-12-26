@@ -11,8 +11,10 @@ public class TicTacToe {
 	static ArrayList<Integer> playerPositon = new ArrayList<>();
 	static ArrayList<Integer> cpuPosition = new ArrayList<>();
 	static Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		
+
+	try {
 		char[][] gamrBoard = { { ' ', '|', ' ', '|', ' ' }, { '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' },
 				{ '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' } };
 		printBoard(gamrBoard);
@@ -48,9 +50,11 @@ public class TicTacToe {
 			}
 
 		}
-
+	} catch (Exception e) {
+		System.out.println("ENTER VALID INPUT:\nONLY NUMBER VALUE WHICH IS B/W 1-9: " );
+		System.out.println("RUN AGAIN:");
 	}
-
+}
 	// placing all piece of based on the user
 	public static void placePiece(char[][] gamrBoard, int pos, String user) {
 		char symbol = ' ';
@@ -127,14 +131,14 @@ public class TicTacToe {
 		winning.add(cross2);
 		for (List<?> l : winning) {
 			if (playerPositon.containsAll(l)) {
-				status =false;
+				status = false;
 				return "Congratulation!! you won the Game!!!";
 
 			} else if (cpuPosition.containsAll(l)) {
-				status =false;
+				status = false;
 				return " Cpu won ";
 			} else if (playerPositon.size() + cpuPosition.size() == 9) {
-				status =false;
+				status = false;
 				return " Draw match";
 			}
 		}

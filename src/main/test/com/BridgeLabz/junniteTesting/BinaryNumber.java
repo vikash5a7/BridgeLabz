@@ -4,17 +4,13 @@ import com.bridgeLabz.util.Utility;
 
 public class BinaryNumber {
 	public static void main(String[] args) {
-		System.out.println("enter a number: ");
-		int number = Utility.inputNumber();
-		int[] binarArray = Utility.decimalToBinary(number);
-		for (int i = binarArray.length-1; i>=0; i--) {
-			System.out.print(binarArray[i]);
-			
+		try {
+			System.out.println("enter a number: ");
+			int number = Utility.inputNumber();
+			Utility.scanner.close();
+			System.out.println(Utility.decimalToBinary(number));
+		} catch (Exception e) {
+			System.out.println("Enter valid input as number only: "+ e);
 		}
-		for (int i : binarArray) {
-			System.out.println(i);
-		}
-		
-	}
-	
+	}	
 }

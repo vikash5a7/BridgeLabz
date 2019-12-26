@@ -31,7 +31,7 @@ public class Array2D {
 			Utility.showDoubleArray(doubleArray);
 		} else if (dataType.equals("boolean")) {
 			booleanArray = Utility.booleanArray();
-			Utility.ShowBooleanArray(booleanArray);
+			Utility.showBooleanArray(booleanArray);
 		} else {
 			System.out.println("enter Correct DataType");
 		}

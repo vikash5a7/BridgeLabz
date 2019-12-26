@@ -1,18 +1,26 @@
+/***********************************************
+ * purpose :An Anagram Detection Example
+ *           
+ * @author  vikash kumar
+ * @version 1.0
+ * @since   26/12/2019          
+ ***********************************************/
+
 package com.BridgeLabz.Algorithm;
 
-import java.util.Scanner;
+import com.bridgeLabz.util.Utility;
 
 public class Anagram {
 	public static void main(String[] args) {
 		int found = 0;
 		int notFound = 0;
 		int n;
-		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(System.in);
+		
 		System.out.println("ENTER YOUR ONE STRING: ");
-		String str = scan.nextLine();
+		String str = Utility.inputName();
 		System.out.println("ENTER YOUR ANOTHER STRING WHICH YOU WANT TO CHECH");
-		String str1 = scan.nextLine();
+		String str1 = Utility.inputName();
+		Utility.scanner.close();
 		if (str.length() == str1.length()) {
 			n = str.length();
 			for (int i = 0; i < n; i++) {

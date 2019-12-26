@@ -9,8 +9,6 @@ public class PrimeNumber
 		int count = 0;
 		int i;
 		System.out.println("enter your number to find prime number : ");
-		Utility.inputNumber();
-		
 		int num = Utility.inputNumber();
 		for (i = 1; i < num; i++)
 		{	

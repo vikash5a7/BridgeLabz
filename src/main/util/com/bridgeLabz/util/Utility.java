@@ -1,10 +1,11 @@
 package com.bridgeLabz.util;
 
+import java.util.Arrays;
 import java.util.Scanner;
 public class Utility {
 	 
 	// taking a string from the keyboard and return it.
-	public static Scanner scanner=new Scanner(System.in);
+	public static final Scanner scanner=new Scanner(System.in);
 	public static String inputName()
 	{
 		String name; 
@@ -170,9 +171,15 @@ public class Utility {
 
 		}
 
-	//for printing 2D double array from given size 
+		/**for printing 2D double array from given size
+		 * 
+		 * @param boolean array
+		 * @param row a integer value
+		 *  @param coul a integer value
+		 * @return returning array
+		 */
 
-		public static boolean[][] ShowBooleanArray(boolean[][] array) {
+		public static boolean[][] showBooleanArray(boolean[][] array) {
 			int row = array.length;
 			int coul = array[0].length;
 			for (int i = 0; i < row; i++) {
@@ -188,15 +195,18 @@ public class Utility {
 			return array;
 		}
 			
-/*    To finding the year is leap year or not:          */
+		/** To finding LeapOrNot a year
+		 * 
+		 * @param year  a integer value
+		 * @return boolean value as it's leap or not
+		 */
 		
 	public static boolean leapOrNot(long year) {
 		if (year % 400 == 0)
 			return true;
 		else if (year % 100 == 0)
 			return false;
-		else if(year % 4 == 0)
-			return true;
+		else if (year % 4 == 0)return true;
 		else
 			return false;
 	}
@@ -277,33 +287,243 @@ public class Utility {
 		 * @param n the value to find binary of
 		 * @return return the binaryArray 
 		 */
-		public static int[] decimalToBinary(int number)
+		public static String decimalToBinary(int number)
 		{
 			int i =0;
-			
-			int[] binarArray = new int[10];
-			while(number!=0)
+			String str = "";
+			int[] binarArray = new int[50];
+			while(number>0)
 			{
 				binarArray[i] = number%2;
-				number = number/2;
-	
+				str = str+binarArray[i];
 				i++;
-			}
-			return binarArray;
+				number = number/2;
 			
+			    
+			}
+			
+			return  Utility.reverseStringUsingArray(str);
 		}
+		/**
+		 * For Reversing of the given string:
+		 *
+		 * @param str a string value:
+		 * @return return the rev;
+		 */
+		public static StringBuilder reverseString(String str){   
+		    StringBuilder rev = new StringBuilder(); 
+		    rev.append(str);
+		    rev.reverse();
+		    return rev;
+		    
+		}  
+		/**
+		 * For Reversing of the given string:
+		 *
+		 * @param str a string value:
+		 * @return return the rev;
+		 */
+		public static String reverseStringUsingArray(String str){  
+		    char ch[]=str.toCharArray();  
+		    String rev="";  
+		    for(int i=ch.length-1;i>=0;i--){  
+		        rev+=ch[i];  
+		    }  
+		    return rev;  
+		}  
 		
+		/** 
+		* Swap Characters at position 
+		* @param a string value 
+		* @param i position 1 
+		* @param j position 2 
+		* @return swapped string 
+		*/
+		public static String swap(String a, int i, int j) 
+		{ 
+			char temp; 
+			char[] charArray = a.toCharArray(); 
+			temp = charArray[i] ; 
+			charArray[i] = charArray[j]; 
+			charArray[j] = temp; 
+			return String.valueOf(charArray); 
+		} 
+
+		/** 
+		* permutation function 
+		* @param str string to calculate permutation for 
+		* @param l starting index 
+		* @param r end index 
+		*/
+		@SuppressWarnings("unused")
+		private static void permute(String str, int l, int r) 
+		{ 
+			if (l == r) 
+				System.out.println(str); 
+			else
+			{ 
+				for (int i = l; i <= r; i++) 
+				{ 
+					str = swap(str,l,i); 
+					permute(str, l+1, r); 
+					str = swap(str,l,i); 
+				} 
+			} 
+		} 
 		
+		/** 
+		* Sorting number using bubble sorting
+		* comparing the adjacent elements 
+		* @param array is integer type
+		* @param temp integer type for storing temporary value
+		* @param flag intergerType
+		*/
+
+	public static int[] bubbleSortForIntergerValue(int[] array) {
+		int temp;
+		for (int i = 0; i < array.length; i++) {
+			int flag = 0;
+			for (int j = 0; j < array.length - 1 - i; j++) {
+				if (array[j] > array[j + 1]) {
+					temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+					flag = 1;
+				}
+			}
+			if (flag == 0) {
+				break;
+			}
+		}
+		return array;
+
+	}
+	/** 
+	* Sorting String using bubble sorting
+	* comparing the adjacent elements 
+	* @param array is integer type
+	* @param temp integer type for storing temporary value
+	* @param flag intergerType
+	*/
+	
+	
+	public static String[] bubbleSortForIntergerValue(String[] array) {
+		String temp;
+		for (int i = 0; i < array.length; i++) {
+			int flag = 0;
+			for (int j = 0; j < array.length - 1 - i; j++) {
+				if (array[j].compareTo(array[j+1])>0) {
+					temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+					flag = 1;
+				}
+			}
+			if (flag == 0) {
+				break;
+			}
+		}
+		return array;
+
+	}
 		
+	/**
+	 * to search a word using binary
+	 * 
+	 * @param arr
+	 * @param s   word which is to be searched
+	 * @return integer index
+	 */
+	public static int binary(String[] arr, String s) {
+		int high = arr.length - 1;
+		int low = 0;
+		int mid;
+		Arrays.sort(arr);
+
+		while (low <= high) {
+			mid = (high + low) / 2;
+			if (s.equalsIgnoreCase(arr[mid])) {
+				return mid;
+			} else if (arr[mid].compareToIgnoreCase(s) < 0) {
+				low = mid + 1;
+			} else {
+				high = mid - 1;
+			}
+		}
+
+		return -1;
+	}
+
+
+
+/** 
+* Sorting String using selection sorting
+* repeatly finding the minimum elements and later it's swap with each other
+* @param array is integer type
+* @param temp integer type for storing temporary value
+* @param min integer for storing the index of minimum
+*/
+	public static int[] selectionSort(int[] array) {
+		int temp =0;
+		int min=0;
+		for (int i = 0; i < array.length; i++) {
+			min=i;
+			for (int j = i+1; j < array.length; j++) {
+				if(array[j]<array[min])
+				{
+					min=j;
+				}
+				temp =array[i];
+				array[i]=array[min];
+				array[min]=temp;
+			}	
+		}
+		return array;
+	}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	/** 
+	*  FOR SEARCHING THE ELEMENTS FROM THE ARRAY:
+	*  USING THE BINNARY SEARCH 
+	* @param STRING ARRAY
+	* @param temp integer type for storing temporary value
+	* @param min integer for storing the index of minimum
+	*/
+	public static int binarySearchForString(String[] arr, String x) 
+			{ 
+				int l = 0; 
+				int r = arr.length - 1; 
+				while (l <= r) { 
+					int m = l + (r - l) / 2; 
+
+					int res = x.compareTo(arr[m]); 
+
+					// Check if x is present at mid 
+					if (res == 0) 
+						return m; 
+
+					// If x greater, ignore left half 
+					if (res > 0) 
+						l = m + 1; 
+
+					// If x is smaller, ignore right half 
+					else
+						r = m - 1; 
+				} 
+
+				return -1; 
+			} 
+
+	public static int[] isertionSort(int[] array) {
+		for (int i = 1; i < array.length; i++) {
+			int temp = array[i];
+			int j = i;
+			while (j > 0 && array[j - 1] > temp) {
+				array[j] = array[j - 1];
+				j = j - 1;
+			}
+			array[j] = temp;
+		}
+		return array;
+
+	}
 }
