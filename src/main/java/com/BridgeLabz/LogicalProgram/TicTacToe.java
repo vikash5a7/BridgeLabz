@@ -15,8 +15,12 @@ public class TicTacToe {
 	public static void main(String[] args) {
 
 	try {
-		char[][] gamrBoard = { { ' ', '|', ' ', '|', ' ' }, { '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' },
-				{ '_', '+', '_', '+', '_' }, { ' ', '|', ' ', '|', ' ' } };
+		char[][] gamrBoard = {  { ' ', '|', ' ', '|', ' ' },
+								{ '_', '+', '_', '+', '_' },
+								{ ' ', '|', ' ', '|', ' ' },
+								{ '_', '+', '_', '+', '_' },
+								{ ' ', '|', ' ', '|', ' ' } };
+		// calling method  printing 
 		printBoard(gamrBoard);
 		while (status) {
 			System.out.println("enter your postion in keyboard b/w (1-9)");
@@ -110,7 +114,6 @@ public class TicTacToe {
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
 	public static String checkWinner() {
 		List<Integer> topRow = Arrays.asList(1, 2, 3);
 		List<Integer> midRow = Arrays.asList(4, 5, 6);
@@ -120,6 +123,7 @@ public class TicTacToe {
 		List<Integer> rightCol = Arrays.asList(9, 6, 3);
 		List<Integer> cross1 = Arrays.asList(1, 5, 9);
 		List<Integer> cross2 = Arrays.asList(7, 5, 3);
+		@SuppressWarnings("rawtypes")
 		List<List> winning = new ArrayList<>();
 		winning.add(topRow);
 		winning.add(midRow);
