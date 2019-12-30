@@ -15,18 +15,15 @@ import com.bridgeLabz.util.Utility;
 
 public class LeapYear {
 	public static void main(String[] args) {
-		System.out.println("Please enter year : ");
-		int year= Utility.inputNumber();
-		System.out.println(Utility.leapOrNot(year));
+			try {
+				System.out.println("Please enter year : ");
+				int year = Utility.inputNumber();
+				System.out.println(Utility.leapOrNot(year));
+				
+			} catch (Exception e) {
+				System.out.println("enter valide number: ");
+			}
 	}
+
 	
- public static boolean leapOrNot(int year)
- {
-		int count = Utility.numberOfDigit(year);;
-	 if(count>=4)
-		 return Utility.leapOrNot(year);
-	 else
-		 return false;
-	 
- }
 }

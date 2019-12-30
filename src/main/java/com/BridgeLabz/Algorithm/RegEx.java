@@ -43,7 +43,7 @@ public class RegEx {
 		msg = m.replaceAll(phoneNumber);
 		
 		// for date birthday
-		System.out.println("ente your date of birthday");
+		System.out.println("Enter your date of birthday");
 		String datebirthday = Utility.inputName();
 		p = Pattern.compile(REGEXBIRTH);
 		// get a matcher object

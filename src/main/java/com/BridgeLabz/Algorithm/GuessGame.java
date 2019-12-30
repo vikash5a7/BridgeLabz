@@ -33,7 +33,9 @@ public class GuessGame {
 	 */
 	static int find() {
 
-		int low = 0, high = 5, mid;
+		int low = 0;
+		int high = 5;
+		int mid;
 		while (low != high) {
 			mid = (low + high) / 2;
 			System.out.println("enter 1 if no is between " + low + " - " + mid + "\nEnter 2 if no is between "
