@@ -41,9 +41,9 @@ public class Utility {
 		}
 		return count;
 	}
-		// INSERTING INTEGER ELEMENT IN ARRAY
+		// TING INTEGER ELEMENT IN ARRAY
 	
-		public static int[] inserting(int num)
+		public static int[] ting(int num)
 		{
 			int[] array = new int[num];
 			for (int i = 0; i < num; i++) {
@@ -72,7 +72,7 @@ public class Utility {
 		
 		
 		
-		//To insert integer elements in array 
+		//To t integer elements in array 
 	public static int[][] inArray() {
 
 		System.out.println("ENTER ROWS AND COLUMN");
@@ -115,7 +115,7 @@ public class Utility {
 		return array;
 	}
 	
-	// To insert double elements in array
+	// To t double elements in array
 	public static double[][] doubleArray() {
 
 		System.out.println("Please enter number of rows");
@@ -152,7 +152,7 @@ public class Utility {
 		return array;
 	}
 		
-	// To insert double elements in array
+	// To t double elements in array
 		public static boolean[][] booleanArray() {
 
 			System.out.println("Please enter number of rows");
@@ -525,5 +525,15 @@ public class Utility {
 		}
 		return array;
 
+	}
+
+
+// for inserting number in array:
+	public static int[] inserting(int num) {
+		int[] array = new int[num];
+		for (int i = 0; i < array.length; i++) {
+			array[i]=Utility.inputNumber();
+		}
+		return array;
 	}
 }
