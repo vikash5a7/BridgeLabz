@@ -11,16 +11,21 @@ package com.BridgeLabz.Algorithm;
 import com.bridgeLabz.util.Utility;
 
 public class Anagram {
+	static String str;
+	static int n;
+	static int notFound = 0;
+	static int found = 0;
 	public static void main(String[] args) {
-		int found = 0;
-		int notFound = 0;
-		int n;
-		
 		System.out.println("ENTER YOUR ONE STRING: ");
-		String str = Utility.inputName();
+		str = Utility.inputName();
 		System.out.println("ENTER YOUR ANOTHER STRING WHICH YOU WANT TO CHECH");
 		String str1 = Utility.inputName();
 		Utility.scanner.close();
+		int result =angramCheck(str1);
+		System.out.println(result);
+	}
+
+	private static int angramCheck(String str1) {
 		if (str.length() == str1.length()) {
 			n = str.length();
 			for (int i = 0; i < n; i++) {
@@ -36,12 +41,13 @@ public class Anagram {
 				}
 			}
 			if (notFound == 1) {
-				System.out.print("STRING ARE NOT ANAGRAM WITH EACH OTHER");
+				return 0;
 			} else {
-				System.out.print("STRING ANAGRAM...!!!");
+				return 1;
 			}
 		} else {
-			System.out.print("BOTH STRING MUST HAVE SAME NUMBER OF CHARACTER..!");
+			return 2;
 		}
+		
 	}
 }
