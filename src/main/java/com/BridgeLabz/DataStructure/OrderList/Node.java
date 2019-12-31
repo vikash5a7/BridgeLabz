@@ -3,8 +3,6 @@ package com.BridgeLabz.DataStructure.OrderList;
 public class Node {
 	private int data;
 	private Node next;
-	public Object nextNode;
-	
 	public Node() {
 		data =0;
 		next = null;
