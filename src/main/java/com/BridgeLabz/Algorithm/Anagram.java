@@ -21,11 +21,21 @@ public class Anagram {
 		System.out.println("ENTER YOUR ANOTHER STRING WHICH YOU WANT TO CHECH");
 		String str1 = Utility.inputName();
 		Utility.scanner.close();
-		int result =angramCheck(str1);
-		System.out.println(result);
+		int result =angramCheck(str,str1);
+		if(result==1)
+		{
+			System.out.println("Angram: ");
+			
+		}
+		else if(result ==0){
+			System.out.println("Not angram: ");
+		}else
+		{
+			System.out.println("Input should have same length of string: ");
+		}
 	}
 
-	private static int angramCheck(String str1) {
+	public static int angramCheck(String str, String str1) {
 		if (str.length() == str1.length()) {
 			n = str.length();
 			for (int i = 0; i < n; i++) {
