@@ -13,19 +13,20 @@ public class Factors {
 		System.out.println("enter a number to find factore");
 		int num= Utility.inputNumber();
 		System.out.println(num + " The prime factore of given number");
-		factor(num);
+		System.out.println(factor(num));
 }
 	
-	public static int[] factor(int num)
+	public static String factor(int num)
 	{
+		String str = "";
 		for( int i=1; i<=num/2;i++)
 		{
 			if(num%i==0)
 			{
-				System.out.print(i + " ");
+				str = str+ i +" ";
 			}
 		}
-		return null;
+		return str;
 	}
 	
 }
