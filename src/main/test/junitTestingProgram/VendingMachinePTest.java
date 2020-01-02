@@ -1,3 +1,12 @@
+/******************************************************************************
+	 *  Purpose: VENDING MACHINE PROGRAM
+	 *  @author  VIKASH KUMAR
+	 *  @version 1.0
+	 *  @since   25-12-2020
+	 *
+	 ******************************************************************************/
+
+
 package junitTestingProgram;
 
 import static org.junit.jupiter.api.Assertions.*;
