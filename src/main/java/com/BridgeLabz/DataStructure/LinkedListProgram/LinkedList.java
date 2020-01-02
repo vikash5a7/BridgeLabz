@@ -1,4 +1,4 @@
-package com.BridgeLabz.DataStructure.LinkedList;
+package com.BridgeLabz.DataStructure.LinkedListProgram;
 //A complete working Java program to demonstrate all insertion methods 
 //on linked list 
 class LinkedList {

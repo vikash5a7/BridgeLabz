@@ -1,4 +1,4 @@
-package com.BridgeLabz.DataStructure.LinkedList;
+package com.BridgeLabz.DataStructure.LinkedListProgram;
 
 public class LinkedList12 {
 	private int size;

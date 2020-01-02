@@ -1,4 +1,4 @@
-package com.BridgeLabz.DataStructure.LinkedList;
+package com.BridgeLabz.DataStructure.LinkedListProgram;
 public class InsertEnd {  
   
     //Represent a node of the singly linked list  

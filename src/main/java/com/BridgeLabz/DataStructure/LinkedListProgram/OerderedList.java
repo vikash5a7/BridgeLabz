@@ -1,4 +1,4 @@
-package com.BridgeLabz.DataStructure.LinkedList;
+package com.BridgeLabz.DataStructure.LinkedListProgram;
 
 import java.io.File;
 import java.io.IOException;
