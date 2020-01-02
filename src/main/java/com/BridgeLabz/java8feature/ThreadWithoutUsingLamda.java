@@ -1,3 +1,5 @@
+/* desc : implementation of Thread without using lamda function */
+
 package com.BridgeLabz.java8feature;
 
 class MyRunable implements Runnable {
@@ -10,7 +12,6 @@ class MyRunable implements Runnable {
 	}
 
 }
-
 public class ThreadWithoutUsingLamda {
 	public static void main(String[] args) {
 		MyRunable r = new MyRunable();
