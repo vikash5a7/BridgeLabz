@@ -7,8 +7,10 @@ public class Harmoninumber
 	public static void main(String[] args) {
 		System.out.println("Please enter the Nth harmonic value:");
 		int number = utility.inputNumber();
+		harmonicNumber(number);
+	}
 
-		
+	public static double harmonicNumber(int number) {
 		final float a = 1;
 		double harmonic = 0;
 		if (number > 0) {
@@ -21,5 +23,7 @@ public class Harmoninumber
 		} else {
 			System.out.println("Enter a number which is greater  0 : ");
 		}
+		return harmonic;
+		
 	}
 }
