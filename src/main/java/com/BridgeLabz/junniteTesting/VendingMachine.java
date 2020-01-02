@@ -7,18 +7,18 @@
 	 ******************************************************************************/
 package com.BridgeLabz.junniteTesting;
 
-import com.bridgeLabz.util.Utility;
-
 public class VendingMachine {
 
 	/* function to count and 
 	 * print currency notes 
 	 * */ 
-		public static void countCurrency(int amount) 
-		{ 
-			int[] notes = new int[]{1000 ,500, 100,50,10, 5,  2, 1}; 
-			int[] noteCounter = new int[8]; 
-		
+
+	static int[] notes = new int[]{1000 ,500, 100,50,10, 5,  2, 1}; 
+	static int[] noteCounter = new int[8]; 
+	
+		public static void countCurrency() 
+		{
+			int amount = 120;
 			// count notes using Greedy approach 
 			for (int i = 0; i < 8; i++) { 
 				if (amount >= notes[i]) { 
@@ -26,6 +26,7 @@ public class VendingMachine {
 					amount = amount - noteCounter[i] * notes[i]; 
 				} 
 			} 
+			// for testing purpose 
 		 
 			// Print all the notes: 
 			System.out.println("Currency Count ->"); 
@@ -36,11 +37,23 @@ public class VendingMachine {
 				} 
 			} 
 		} 
-		public static void main(String[] args){ 
-			System.out.println("ENTER YOUR AMOUNT: ");
-			int amount = Utility.inputNumber(); 
+		
+		
+		
+		public static String printNote()
+		{
+			String numberOfNote = "";
+			for (int i : noteCounter) {
+				
+					numberOfNote =numberOfNote + i + " ";
+			}
+			return numberOfNote;
 			
-			countCurrency(amount); 
+		}
+		public static void main(String[] args){ 
+			System.out.println("ENTER YOUR AMOUNT: is 120 ");
+			countCurrency(); 
+			System.out.println(printNote());
 		} 
 
 	} 

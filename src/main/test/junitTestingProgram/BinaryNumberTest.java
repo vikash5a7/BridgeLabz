@@ -1,4 +1,4 @@
-package com.BridgeLabz.junniteTesting;
+package junitTestingProgram;
 
 import static org.junit.jupiter.api.Assertions.*;
 

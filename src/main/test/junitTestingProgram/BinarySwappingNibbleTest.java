@@ -6,11 +6,13 @@
 	 *  @since   28-12-2018
 	 *
 	 ******************************************************************************/
-package com.BridgeLabz.junniteTesting;
+package junitTestingProgram;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import com.BridgeLabz.junniteTesting.BinarySwappingNibble;
 
 class BinarySwappingNibbleTest {
 

@@ -14,9 +14,7 @@ public class flipcoin {
 
 		while(counter<=numberOfTime)
 		{
-			randNum = Math.random();
-//            System.out.print(counter + "\t" + randNum);
-             
+			randNum = Math.random();   
             if(randNum < 0.5)
             {
                 heads++;
