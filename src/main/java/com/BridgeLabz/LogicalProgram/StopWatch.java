@@ -10,6 +10,8 @@ package com.BridgeLabz.LogicalProgram;
 
 import java.util.Scanner;
 
+import com.bridgeLabz.util.Utility;
+
 public class StopWatch {
 
 	static double start = 0;
@@ -41,13 +43,12 @@ public class StopWatch {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
 		System.out.println("enter 1 to start");
-		s.next();
+		Utility.inputNumber();
 		startTime();
 		System.out.println("enter to stop");
-		s.next();
-		s.close();
+		Utility.inputNumber();
+		Utility.scanner.close();
 		stopTime();
 		elapsedTime();
 	}
