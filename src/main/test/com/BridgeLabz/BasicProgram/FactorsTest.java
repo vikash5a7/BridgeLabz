@@ -1,16 +1,14 @@
-package com.BridgeLabz.BasicProgram.test;
+package com.BridgeLabz.BasicProgram;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.BridgeLabz.BasicProgram.Power2;
-
-class Power2Test {
+class FactorsTest {
 
 	@Test
 	void test() {
-		
+		fail("Not yet implemented");
 	}
 
 }

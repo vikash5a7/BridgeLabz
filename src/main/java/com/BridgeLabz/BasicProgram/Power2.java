@@ -20,18 +20,21 @@ public class Power2 {
 	public static void main(String[] args) {
 		System.out.println("Please enter the power value:");
 		int num = Utility.inputNumber();
-		findingPower(num);
+		System.out.println(findingPower(num));
 	}
 
 	// To determine the power of given number
-	private static void findingPower(int num) {
+	public static String findingPower(int num) {
 		int power = 1;
+		String str = "";
 		if (num >= 0 && num < 31) {
 			for (int i = 0; i <= num; i++) {
 				System.out.println("2 ^" + i + " = " + power);
+				str = str + power + " ";
 				power = power * 2;
 			}
 		}
+		return str ;
 	}
 
 }
