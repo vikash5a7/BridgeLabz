@@ -28,7 +28,7 @@ class BubbleSortForIntergerTest {
 				System.out.print(i+ " ");
 			}
 		} catch (Exception e) {
-			System.out.println("ENTER VALID NUMBER: ");
+			System.err.println("enter valide input: ");
 		}
 	}
 

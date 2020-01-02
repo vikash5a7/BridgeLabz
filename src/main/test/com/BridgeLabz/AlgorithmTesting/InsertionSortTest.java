@@ -26,7 +26,7 @@ class InsertionSortTest {
 				System.out.print(i + " ");
 			}
 		} catch (Exception e) {
-			System.out.println("ENTER VALID NUMBER: ");
+			System.err.println("ENTER VALID INPUT PLEASE: ");
 		}
 	}
 
