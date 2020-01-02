@@ -29,10 +29,13 @@ public class BinarSearch {
 				high = mid - 1;
 			}
 			mid = (low + high) / 2;
+			if (low > high)
+			{
+			System.out.println(search + " is not found.\n");
+			searchedValue = "Not Found";
+			}
 		}
-		if (low > high)
-			System.out.println(" is not found.\n");
-		searchedValue = "Not Found";
+	
 		return searchedValue;
 	}
 }
