@@ -1,3 +1,11 @@
+/***********************************************
+ * purpose : insert Method 
+ *           
+ * @author  vikash kumar
+ * @version 1.0
+ * @since   26/12/2019          
+ ***********************************************/
+
 package com.BridgeLabz.Algorithm;
 
 import java.util.Scanner;

@@ -1,7 +1,13 @@
+/***********************************************
+ * purpose : Bubble sorting program: 
+ *           
+ * @author  vikash kumar
+ * @version 1.0
+ * @since   26/12/2019          
+ ***********************************************/
+
+
 package com.BridgeLabz.Algorithm;
-
-
-
 // Java program for implementation of Bubble Sort
 	class BubbleSort
 	{

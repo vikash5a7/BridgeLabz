@@ -1,3 +1,11 @@
+/***********************************************
+ * purpose : Tic-Tac-Toe Program :
+ *           
+ * @author  vikash kumar
+ * @version 1.0
+ * @since   26/12/2019          
+ ***********************************************/
+
 package com.BridgeLabz.Algorithm;
 
 import java.util.ArrayList;
@@ -106,7 +114,11 @@ public class TicTacToe {
 			System.out.println();
 		}
 	}
-
+/* 
+ * THIS METHOD IS USED TO CHECK THE WINNER 
+ *  Displaying message who will win computer or player
+ * 
+ */
 	@SuppressWarnings("rawtypes")
 	public static String checkWinner() {
 		List<Integer> topRow = Arrays.asList(1, 2, 3);
