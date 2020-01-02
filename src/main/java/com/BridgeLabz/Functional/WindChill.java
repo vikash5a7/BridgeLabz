@@ -27,7 +27,8 @@ public class WindChill {
 
 	public static double windChill(double v, double t) {
 		double poe = Math.pow(v, 0.16);
-		return 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * poe;
+		double value= (35.74 + 0.6215 * t + (0.4275 * t - 35.75) * poe);
+		return value;
 
 	}
 }

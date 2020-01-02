@@ -17,7 +17,7 @@ class WindChillTest {
 
 	@Test
 	void test() {
-	double actual = WindChill.windChill(120, 340);
+	double actual = WindChill.windChill(120,340);
 	double expected = 149.45401344630147;
 	assertEquals(expected, actual);
 	
