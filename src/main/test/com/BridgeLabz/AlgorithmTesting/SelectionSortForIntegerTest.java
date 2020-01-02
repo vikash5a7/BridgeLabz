@@ -12,25 +12,28 @@ import com.bridgeLabz.util.Utility;
  */
 class SelectionSortForIntegerTest {
 
+
+	
 	@Test
 	void test() {
-		try {
-			System.out.println("ENTER HOW MANY NUMBER DO YOU WANT TO ENTER IN ARRAY: ");
-			int num = Utility.inputNumber();
-			System.out.println("ENTER YOUR ELEMENTS IN ARRAY: ");
-			int[] actual = Utility.inserting(num);
-			System.out.println("Enter your Expected array: ");
-			int [] expected = Utility.inserting(num);
-			Utility.scanner.close();
-			int[] sortedArray = Utility.selectionSort(actual);
-			assertArrayEquals(expected, actual);
-			System.out.println("YOUR SORTED ARRAY ARE: ");
-			for (int i : sortedArray) {
-				System.out.print(i + " ");
-			}
-		} catch (Exception e) {
-			System.out.println("ENTER VALID NUMBER: ");
-		}
+
+		int[] expected = { 1, 2, 3, 4 };
+		int[] array = { 2, 4, 1, 3 };
+		int[] actual = Utility.selectionSort(array);
+		assertArrayEquals(expected, actual);
+
 	}
+	
+	
+	@Test
+	void test2() {
+		int[] expected = { 2, 3, 4, 5};
+		int[] array = { 2, 4, 3, 5};
+		int[] actual = Utility.selectionSort(array);
+		assertArrayEquals(expected, actual);
+
+
+	}
+
 
 }
