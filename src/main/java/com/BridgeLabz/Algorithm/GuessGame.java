@@ -28,8 +28,6 @@ public class GuessGame {
 	}
 	/**
 	 * function to fine the number
-	 * 
-	 * @return low
 	 */
 	static int find() {
 

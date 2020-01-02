@@ -9,7 +9,9 @@
 package com.BridgeLabz.Algorithm;
 public class InsertionSort {
 	
-		/*Function to sort array using insertion sort*/
+		/*Function to sort array using insertion sort
+		 * 
+		 */
 		void sort(int arr[]) 
 		{ 
 			int n = arr.length; 
@@ -40,7 +42,6 @@ public class InsertionSort {
 			System.out.println(); 
 		} 
 
-		// Driver method 
 		public static void main(String args[]) 
 		{		 
 			int arr[] = {12, 11, 13, 5, 6}; 
