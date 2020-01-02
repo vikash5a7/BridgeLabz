@@ -30,7 +30,7 @@ public class IntegerAddsToZERO {
 		numberOfTripleSum(a);
 	}
 
-	private static void numberOfTripleSum(int[] a) {
+	public static int numberOfTripleSum(int[] a) {
 		int count = 0;
 		for (int i = 0; i < a.length - 2; i++) {
 			for (int j = i + 1; j < a.length - 1; j++) {
@@ -49,6 +49,7 @@ public class IntegerAddsToZERO {
 			}
 		}
 		System.out.println(" Count " + count);
+		return count;
 	}
 
 }
