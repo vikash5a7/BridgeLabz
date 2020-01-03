@@ -1,12 +1,11 @@
 package com.BridgeLabz.DataStructure.Queue;
 
-import java.util.Iterator;
-
 import com.bridgeLabz.util.Utility;
 
 public class BankingCashCounter {
+	static int amout = 100000;
+
 	public static void main(String[] args) {
-		int amout = 100000;
 		System.out.println("Enter how many person: ");
 
 		int person = Utility.inputNumber();
@@ -16,19 +15,27 @@ public class BankingCashCounter {
 		}
 		while (person != 0) {
 			int choice;
-			System.out.println("enter your choice id number: " + q.peek());
-			
+			int personNumber = q.peek();
+			System.out.println("enter your choice Quequ at postion: " + personNumber);
+
 			System.out.println("1. WITHDRAW 2. DEPOSIT: ");
 			choice = Utility.inputNumber();
 			switch (choice) {
 			case 1:
-				System.out.println("enter how much amount do you want to deposit: ");
-				withdraw();
+				System.out.println("enter how much amount do you want to Withdraw : ");
+				int withdraaw = Utility.inputNumber();
+				withdraw(withdraaw);
+				q.dequeue();
+				System.out.println("Have a nice day! thanks... You can go \n \n");
+				
 				person--;
 				break;
 			case 2:
 				System.out.println("enter how much amount do you want to deposit: ");
-				deposite();
+				int depostMoney = Utility.inputNumber();
+				deposite(depostMoney);
+				q.dequeue();
+				System.out.println("Have a nice day! thanks... You can go \n \n");
 				person--;
 				break;
 
@@ -41,11 +48,23 @@ public class BankingCashCounter {
 
 	}
 
-	private static void deposite() {
+	private static void withdraw(int withdraaw) {
+
+		if (withdraaw > amout) {
+			System.out.println("Insufficient balance Try for minimum");
+		} else {
+			amout = amout - withdraaw;
+			System.out.println(" SucessFully withdraw amount: ");
+			System.out.println("Here is your amout: " + withdraaw);
+			System.out.println("current Balance is: " + amout);
+		}
+
 	}
 
-	private static void withdraw() {
-
+	public static void deposite(int amoutForDeposit) {
+		amout = amout + amoutForDeposit;
+		System.out.println(" SucessFully Deposit amount: " + amoutForDeposit);
+		System.out.println("current Balance is: " + amout);
 	}
 
 }

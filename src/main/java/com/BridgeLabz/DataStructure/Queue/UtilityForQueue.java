@@ -33,7 +33,7 @@ class UtilityForQueue
 				System.exit(1);
 			}
 
-			System.out.println("Inserting " + item);
+			System.out.println("Person Number " + item);
 
 			rear = (rear + 1) % capacity;
 			arr[rear] = item;
@@ -51,7 +51,7 @@ class UtilityForQueue
 			System.exit(1);
 		}
 
-		System.out.println("Removing " + arr[front]);
+		System.out.println("Person " + arr[front]);
 
 		front = (front + 1) % capacity;
 		count--;

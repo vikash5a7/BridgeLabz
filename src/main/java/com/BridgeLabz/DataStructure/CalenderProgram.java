@@ -11,7 +11,7 @@ public class CalenderProgram {
 
 		int[] daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		String[] daysName = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "sat" };
-		System.out.println("\n \n \n .......... Calender of  Year-" + year + " Month- " + month + "th");
+		System.out.println("\n \n \n .......... Calender of  Year-" + year + " Month- " + month + "th  ...........\n");
 		// printing days...
 		for (int i = 0; i < daysName.length; i++) {
 			System.out.print(daysName[i] + "\t");
