@@ -1,7 +1,5 @@
 package com.BridgeLabz.DataStructure.Queue;
 
-import java.util.*;
-
 //Class for queue
 class UtilityForQueue 
 {
