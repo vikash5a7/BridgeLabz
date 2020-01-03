@@ -12,6 +12,8 @@ public class BalancedParanthesis {
 			System.out.println("Enter the equation to find paranthesis is banlanced or not ");
 			String equation = Utility.inputName();
 			String[] arr = equation.split("");
+			
+			
 			for (int i = 0; i < arr.length; i++) {
 				if (arr[i].equals("(")) {
 					stack.push(arr[i]);
@@ -24,15 +26,23 @@ public class BalancedParanthesis {
 
 				}
 			}
+			
+			
+			
 			if (flag) {
 				res = stack.isEmpty();
 			}
+			
+			
 			if (res) {
 				System.out.println("balanced");
 			} else if (flag == true) {
 				System.out.println("not balanced");
 			}
-		} catch (Exception e) {
+		}
+		
+		
+		catch (Exception e) {
 			System.out.println(e);
 		}
 
