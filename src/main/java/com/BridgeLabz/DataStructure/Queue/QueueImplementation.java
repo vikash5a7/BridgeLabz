@@ -13,13 +13,24 @@ public class QueueImplementation {
 		rear++;
 		size++;
 	}
+	// delete elements
+	public int dequeue()
+	{
+		int data = queue[front];
+		front ++;
+		size--;
+		return data;
+	}
+	
+	
+	
 	// printing elements 
 	public void show()
 	{
 		System.out.println("Elements are: ");
 		for(int i = 0; i<size; i++)
 		{
-			System.out.print(queue[i] + " ");
+			System.out.print(queue[front+i] + " ");
 		}
 	}
 }
