@@ -32,11 +32,11 @@ public class Calendra {
 			year = Integer.parseInt(currentYear.format(date));
 		}
 
-		System.out.println("\n\n\n\t\t..........calender of " + mnth + ", " + year + " ..........\n\n\n \t\t\t");
+		System.out.print("\n\n\t\t..........calender of " + mnth + ", " + year + " ..........\n\n \t");
 		for (int i = 0; i < week.length; i++) {
-			System.out.println(week[i] + " \t");
+			System.out.print(week[i] + " \t");
 		}
-		System.out.println("\n\t");
+		System.out.print("\n\t");
 		int weekNo = 1, monthDay[], countLeapYear = 0;
 		monthDay = new int[12];
 		monthDay[0] = 31;
@@ -66,8 +66,33 @@ public class Calendra {
 			}
 			countDay += (countYear * 365) + countLeapYear;
 			startWeekDay = 7 - (countDay % 7);
-
+		} else {
+			countYear = year -2011;
+			for (int j = 1; j < mnth; j++) {
+				countDay = countDay + monthDay[j - 1];
+			}
+			for (int i = 2010; i > year; i--) {
+				if (Utility.leapOrNot(i))
+					countLeapYear++;
+			}
+			countDay += (countYear * 365) + countLeapYear;
+			startWeekDay = 7 - (countDay % 7);
+			if(startWeekDay ==0) startWeekDay = 7;
 		}
-
+		
+		for (int i = 0; i < startWeekDay; i++) System.out.print("\t");
+		weekNo = startWeekDay;
+		for(int j=1; j<monthDay[mnth-1]; j++)
+		{
+			if(weekNo%7==0)
+			{
+				weekNo=0;
+				System.out.println("\t" + j);
+			}
+			else 
+				System.out.print("\t"+j);
+			
+			weekNo++;
+		}
 	}
 }
