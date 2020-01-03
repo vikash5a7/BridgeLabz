@@ -9,15 +9,14 @@ public class StackLL {
 		this.head = null;
 	}
 
-	
 	// performing pup operation
 	public void push(int data) {
 		Node newNode = new Node(data);
 		newNode.next = this.head;
 		this.head = newNode;
 	}
-	
-	// performing display operation 
+
+	// performing display operation
 	public void display() {
 		if (head == null) {
 			System.out.println("stack is empty");
@@ -29,7 +28,7 @@ public class StackLL {
 			}
 		}
 	}
-	
+
 // performing peek operation
 	public int peek() {
 		if (head == null)
@@ -50,22 +49,20 @@ public class StackLL {
 		}
 		return 0;
 	}
-	
-	
+
 	// size of stack
 
 	public int size() {
-		if(head ==null)
+		if (head == null)
 			return 0;
 		Node temp = this.head;
-		int count =0;
-		while(temp!= null)
-		{
-			count ++;
+		int count = 0;
+		while (temp != null) {
+			count++;
 			temp = temp.next;
 		}
 		return count;
-		
+
 	}
 
 }
