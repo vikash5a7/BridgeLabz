@@ -1,0 +1,47 @@
+package com.BridgeLabz.DataStructure;
+
+import com.bridgeLabz.util.Utility;
+
+public class CalenderProgram {
+	public static void main(String[] args) {
+		int month;
+		int year;
+		System.out.println("enter Month: ");
+		month = Utility.inputNumber();
+		System.out.println("Enter your year: ");
+		year = Utility.inputNumber();
+		int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		String[] daysName = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "sat"};
+		for (int i = 0; i < daysName.length; i++) {
+			System.out.print(daysName[i] +"\t");
+			
+		}
+		System.out.println();
+		if(Utility.leapOrNot(year)) {
+			daysInMonth[1]=29;
+		}
+		int empt=day(month, year);
+		for(int i=0;i<empt;i++)
+		{
+			System.out.print(" ");
+		}
+		int count=0;
+		for(int i=1;i<daysInMonth[month-1];i++) {
+			count++;
+			if(count%7==0)
+				System.out.println();
+			System.out.print(" "+i+"\t");
+		}
+	}
+
+	private static int day(int m, int y) {
+		int d= 1;
+		int y0 = y-(14-m) / 12;
+		int x = y0 + y0/4-y0/100 + y0/400;
+		int m0 = m + 12 * ((14-m)/ 12)-2;
+		int d0 = (d + x + 31 * m0 / 12)%7;
+		return d0;
+		
+	}
+
+}
