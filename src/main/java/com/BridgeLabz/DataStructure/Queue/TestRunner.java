@@ -7,9 +7,14 @@ public class TestRunner {
 		q.enQueue(4);
 		q.enQueue(2);
 		q.enQueue(9);
+		q.enQueue(2);
+//		q.dequeue();
+//		q.dequeue();
+//		q.enQueue(4);
+//		q.enQueue(2);
 		q.show();
-		System.out.println("\n after deleting elements: ");
-		q.dequeue();
-		q.show();
+		System.out.println(q.getSize());
+		System.out.println(q.isEmpty());
+		System.out.println(q.isFull());
 	}
 }
