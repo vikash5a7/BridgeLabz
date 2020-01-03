@@ -11,8 +11,7 @@ class QueueImpl
 		q.enqueue(2);
 		q.enqueue(3);
 		q.enqueue(2);
-		q.enqueue(12);
-		q.enqueue(122);
+		
 		System.out.println("Front element is: " + q.peek());
 		q.dequeue();
 		System.out.println("Front element is: " + q.peek());

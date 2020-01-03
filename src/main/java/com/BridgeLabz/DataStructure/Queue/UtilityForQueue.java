@@ -87,4 +87,12 @@ class UtilityForQueue
 	{
 		return (size() == capacity);
 	}
+	// to show the queue
+	public void show()
+	{
+		for(int i = 0; i<size(); i++)
+		{
+			System.out.print(arr[(front+i)%capacity] + " ");
+		}
+	}
 }
