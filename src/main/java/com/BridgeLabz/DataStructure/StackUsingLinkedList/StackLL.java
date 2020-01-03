@@ -24,27 +24,38 @@ public class StackLL {
 			}
 		}
 	}
-	 public int peek()
-	 {
-		 if(head==null)
-			 System.out.println("Stack is empty: ");
-		 else
-			 return this.head.data;
+
+	public int peek() {
+		if (head == null)
+			System.out.println("Stack is empty: ");
+		else
+			return this.head.data;
 		return 0;
-	 }
-	 public int pop()
-	 {
-		 if(head == null)
-		 {
-			 System.out.println("Stack is empty");
-		 }
-		 else
-		 {
+	}
+
+	public int pop() {
+		if (head == null) {
+			System.out.println("Stack is empty");
+		} else {
 			Node temp = head;
 			this.head = head.next;
 			return temp.data;
-		 }
+		}
 		return 0;
-	 }
+	}
+
+	public int size() {
+		if(head ==null)
+			return 0;
+		Node temp = this.head;
+		int count =0;
+		while(temp!= null)
+		{
+			count ++;
+			temp = temp.next;
+		}
+		return count;
+		
+	}
 
 }

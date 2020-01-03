@@ -8,7 +8,11 @@ public class Main {
 	s.push(4);
 	s.push(6);
 	s.push(23);
+	System.out.println("elements are: ");
 	s.display();
-	System.out.println(s.peek());
+	System.out.println("first elements" + s.peek());
+	System.out.println("poped elemets is "+ s.pop());
+	System.out.println("first elements" + s.peek());
+	System.out.println(s.size());
 	}
 }
