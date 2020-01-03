@@ -33,6 +33,8 @@ public class QueueImplementation {
 		rear++;
 		size++;
 	}
+	
+	
 	// delete elements
 	public int dequeue()
 	{
