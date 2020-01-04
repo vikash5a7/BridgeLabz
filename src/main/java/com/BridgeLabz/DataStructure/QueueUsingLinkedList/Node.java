@@ -1,6 +1,6 @@
 package com.BridgeLabz.DataStructure.QueueUsingLinkedList;
 /***********************************************
- * purpose :An Anagram Detection Example
+ * purpose : Node class
  *           
  * @author  vikash kumar
  * @version 1.0

@@ -2,6 +2,9 @@ package ds;
 
 //A complete working Java program to demonstrate all insertion methods 
 //on linked list 
+
+
+
 class LinkedList {
 	Node head; // head of list
 
