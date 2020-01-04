@@ -526,15 +526,34 @@ public class Utility {
 		return array;
 
 	}
-
-
-// for inserting number in array:
+	/**
+	 * function to insert integer in array
+	 * 
+	 * @param number
+	 * @return array
+	 */
 	public static int[] inserting(int num) {
 		int[] array = new int[num];
 		for (int i = 0; i < array.length; i++) {
 			array[i]=Utility.inputNumber();
 		}
 		return array;
+	}
+	
+	
+	/**
+	 * function to check if given no is prime or not
+	 * 
+	 * @param n the number which to check for prime
+	 * @return true if prime false if not
+	 */
+	public static boolean isPrime(int n) {
+		for (int i = 2; i <= n / 2; i++) {
+			if (n % i== 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 }
