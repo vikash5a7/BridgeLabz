@@ -40,6 +40,19 @@ public class QueueLL {
 	}
 	// displaying data 
 	
+	public int deQueue() {
+		if(isEmpty())
+		{
+			System.out.println("stack is empty: ");
+		}
+		Node temp = front;
+		front = temp.getNext();
+		if(front == null)
+			rear = null;
+		size--;
+		return temp.getData();
+	}
+	
 	public void display()
 	{
 		System.out.print("\nQueue = ");

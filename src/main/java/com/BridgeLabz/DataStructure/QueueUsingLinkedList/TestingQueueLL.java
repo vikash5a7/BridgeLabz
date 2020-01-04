@@ -9,6 +9,7 @@ public class TestingQueueLL {
 		q.enQueue(13);
 		q.enQueue(12);
 		q.enQueue(23);
+		q.deQueue();
 		System.out.println(q.isEmpty());
 		q.display();
 		System.out.println(q.size);
