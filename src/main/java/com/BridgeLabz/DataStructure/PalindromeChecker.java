@@ -25,6 +25,7 @@ public class PalindromeChecker {
 		dq1.display();
 		System.out.print("\n After Reversing: ");
 		dq.display();
+		palidrome(dq, dq1, strlength);
 		if (status == true) {
 			System.out.println("\nGIVEN STRING IS PALIDROME ");
 		} else {
@@ -33,5 +34,14 @@ public class PalindromeChecker {
 
 	}
 
-	
+	private static boolean palidrome(UtilityForDeque dq, UtilityForDeque dq1, int strlength) {
+
+		for (int i = 1; i < strlength; i++) {
+			if (dq.peekAtFront().equals(dq1.peekAtFront())) {
+				status = true;
+			} else
+				status = false;
+		}
+		return status;
+	}
 }
