@@ -74,5 +74,53 @@ class Dequeue {
 			rear = temp;
 		}
 	}
+	
+	  /*  Function to remove front element from the queue */
+	   public int removeAtFront()
+	   {
+	       if (isEmpty() )
+	           throw new NoSuchElementException("Underflow Exception");
+	       Node temp = front;
+	       front = temp.getNext();
+
+	       if (front == null)
+	           rear = null;
+	       size-- ;
+
+	       return temp.getData();
+	   }
+	   /*  Function to remove rear element from the queue */
+	   public int removeAtRear()
+	   {
+	       if (isEmpty() )
+	           throw new NoSuchElementException("Underflow Exception");
+	       int ele = rear.getData();
+	       Node s = front;
+	       Node t = front;
+	       while (s != rear)
+	       {
+	           t = s;
+	           s = s.getNext();
+	       }
+	       rear = t;
+	       rear.setNext(null);
+	       size --;
+
+	       return ele;
+	   }        
+	   /*  Function to check the front element of the queue */
+	   public int peekAtFront()
+	   {
+	       if (isEmpty() )
+	           throw new NoSuchElementException("Underflow Exception");
+	       return front.getData();
+	   }
+	   /*  Function to check the front element of the queue */
+	   public int peekAtRear()
+	   {
+	       if (isEmpty() )
+	           throw new NoSuchElementException("Underflow Exception");
+	       return rear.getData();
+	   } 
 
 }
