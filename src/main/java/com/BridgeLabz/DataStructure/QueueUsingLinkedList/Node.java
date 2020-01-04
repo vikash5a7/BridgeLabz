@@ -1,15 +1,15 @@
 package com.BridgeLabz.DataStructure.QueueUsingLinkedList;
 
 public class Node {
-	private String data;
+	private int data;
 	private Node next;
 	
 	public Node() {
-		data =null;
+		data =0;
 		next = null;
 	}
 	
-	public Node(String data, Node next) {
+	public Node(int data, Node next) {
 		super();
 		this.data = data;
 		this.next = next;
@@ -17,11 +17,11 @@ public class Node {
 
 	
 
-	public String getData() {
+	public int getData() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setData(int data) {
 		this.data = data;
 	}
 
@@ -29,7 +29,7 @@ public class Node {
 		return next;
 	}
 
-	public Node(String data) {
+	public Node(int data) {
 		super();
 		this.data = data;
 	}
