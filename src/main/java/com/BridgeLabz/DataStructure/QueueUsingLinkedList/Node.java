@@ -1,4 +1,11 @@
 package com.BridgeLabz.DataStructure.QueueUsingLinkedList;
+/***********************************************
+ * purpose :An Anagram Detection Example
+ *           
+ * @author  vikash kumar
+ * @version 1.0
+ * @since   4-01-2020         
+ ***********************************************/
 
 public class Node {
 	private int data;
@@ -8,14 +15,14 @@ public class Node {
 		data =0;
 		next = null;
 	}
-	
+	/****** constructor***/
 	public Node(int data, Node next) {
 		super();
 		this.data = data;
 		this.next = next;
 	}
 
-	
+	/*Getter and setter.....*/
 
 	public int getData() {
 		return data;
