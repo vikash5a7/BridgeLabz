@@ -33,7 +33,12 @@ public class QueueLL {
         size++ ;
     }    
 
-	
+	// Size of the Queue
+	public int size()
+	{
+		return size;
+	}
+	// displaying data 
 	
 	public void display()
 	{
