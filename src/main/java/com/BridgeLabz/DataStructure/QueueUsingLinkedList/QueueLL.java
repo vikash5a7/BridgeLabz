@@ -39,8 +39,20 @@ public class QueueLL {
 		return size;
 	}
 
-	// displaying data
+	//  deleting elements from Queue
 	public int deQueue() {
+		if (isEmpty()) {
+			System.out.println("stack is empty: ");
+		}
+		Node temp = front;
+		front = temp.getNext();
+		if (front == null)
+			rear = null;
+		size--;
+		return temp.getData();
+	}
+//  deleting elements from Queue
+	public int delete() {
 		if (isEmpty()) {
 			System.out.println("stack is empty: ");
 		}

@@ -15,22 +15,20 @@ public class Anagram {
 	static int n;
 	static int notFound = 0;
 	static int found = 0;
+
 	public static void main(String[] args) {
 		System.out.println("ENTER YOUR ONE STRING: ");
 		str = Utility.inputName();
 		System.out.println("ENTER YOUR ANOTHER STRING WHICH YOU WANT TO CHECH");
 		String str1 = Utility.inputName();
 		Utility.scanner.close();
-		int result =angramCheck(str,str1);
-		if(result==1)
-		{
+		int result = angramCheck(str, str1);
+		if (result == 1) {
 			System.out.println("Angram: ");
-			
-		}
-		else if(result ==0){
+
+		} else if (result == 0) {
 			System.out.println("Not angram: ");
-		}else
-		{
+		} else {
 			System.out.println("Input should have same length of string: ");
 		}
 	}
@@ -58,6 +56,6 @@ public class Anagram {
 		} else {
 			return 2;
 		}
-		
+
 	}
 }
