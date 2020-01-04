@@ -28,12 +28,46 @@ class Dequeue
    {
        return size;
    }
+   
    /* Clear dequeue */
    public void clear()
    {
        front = null;
        rear = null;
        size = 0;
+   }
+   
+   /*  Function to insert an element at begining  */
+   public void insertAtFront(int val)
+   {
+       Node temp = new Node(val, null);    
+       size++ ;    
+       if (front == null) 
+       {
+           front = temp;
+           rear = front;
+       }
+       else 
+       {
+           temp.setNext(front);
+           front = temp;
+       }
+   }
+   /*  Function to display the status of the queue */
+   public void display()
+   {
+       System.out.print("\nDequeue = ");
+       if (size == 0)
+       {
+           System.out.print(" Stack is empty ");
+       }
+       Node ptr = front;
+       while (ptr != rear.getNext() )
+       {
+           System.out.print(ptr.getData()+" ");
+           ptr = ptr.getNext();
+       }
+       System.out.println();        
    }
   
 }

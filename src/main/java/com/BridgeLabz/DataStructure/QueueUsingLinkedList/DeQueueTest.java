@@ -5,6 +5,9 @@ public class DeQueueTest {
 		Dequeue dq = new Dequeue();
 		System.out.println("Size Of list : " + dq.getSize());
 		System.out.println("Is DeQueue is Empty: " + dq.getSize());
+		dq.insertAtFront(12);
+		System.out.println("Size Of list : " + dq.getSize());
+		dq.display();
 	}
 
 }
