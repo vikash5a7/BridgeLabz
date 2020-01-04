@@ -9,4 +9,10 @@ public class QueueLL {
 		rear = null;
 		size = 0;
 	}
+	
+	// queue is empty or not
+	public boolean isEmpty()
+	{
+		return rear ==null;
+	}
 }
