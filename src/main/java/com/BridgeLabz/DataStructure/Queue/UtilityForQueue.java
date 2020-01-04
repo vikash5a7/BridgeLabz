@@ -1,7 +1,7 @@
 package com.BridgeLabz.DataStructure.Queue;
 
 //Class for queue
-class UtilityForQueue 
+public class UtilityForQueue 
 {
 	private int arr[];		// array to store queue elements
 	private int front;		// front points to front element in the queue (if any)
@@ -12,7 +12,7 @@ class UtilityForQueue
 	
 	
 	// Constructor to initialize queue
-	UtilityForQueue(int size)
+	public UtilityForQueue(int size)
 	{
 		arr = new int[size];
 		capacity = size;

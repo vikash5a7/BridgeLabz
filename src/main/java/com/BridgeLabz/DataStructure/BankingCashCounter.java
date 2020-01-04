@@ -1,5 +1,6 @@
-package com.BridgeLabz.DataStructure.Queue;
+package com.BridgeLabz.DataStructure;
 
+import com.BridgeLabz.DataStructure.Queue.UtilityForQueue;
 import com.bridgeLabz.util.Utility;
 
 public class BankingCashCounter {
@@ -27,8 +28,10 @@ public class BankingCashCounter {
 				withdraw(withdraaw);
 				q.dequeue();
 				System.out.println("Have a nice day! thanks... You can go \n \n");
-				
-				person--;
+				--person;
+				System.out.print("Reamining person: ");
+				q.show();
+				System.out.println("\n");
 				break;
 			case 2:
 				System.out.println("enter how much amount do you want to deposit: ");
@@ -36,7 +39,10 @@ public class BankingCashCounter {
 				deposite(depostMoney);
 				q.dequeue();
 				System.out.println("Have a nice day! thanks... You can go \n \n");
-				person--;
+				--person;
+				System.out.print("Reamining person: ");
+				q.show();
+				System.out.println("\n");
 				break;
 
 			default:
