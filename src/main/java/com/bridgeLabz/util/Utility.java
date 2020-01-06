@@ -52,7 +52,11 @@ public class Utility {
 		}
 		return count;
 	}
-	// TING INTEGER ELEMENT IN ARRAY
+	/****
+	 * it's inserting number in array 
+	 * @param num: asking a number from the user
+	 *	@return returning array 
+	 */
 
 	public static int[] ting(int num) {
 		int[] array = new int[num];
@@ -62,8 +66,14 @@ public class Utility {
 		return array;
 
 	}
+	/****
+	 *  this method is used for printing the array:
+	 * 	
+	 *	@return returning array 
+	 */
 
-	// this method is used for printing the array:
+	
+	
 	public static void printArray(int[] arr) {
 		int num = arr.length;
 		for (int i = 0; i < num; ++i)
@@ -71,7 +81,12 @@ public class Utility {
 		System.out.println();
 	}
 
-	// this method is used for printing the double array:
+	/****
+	 *  this method is used for printing  double value the array:
+	 * 	
+	 *	@return returning array 
+	 */
+
 	public static void prinDoubletArray(double[] arr) {
 		int n = arr.length;
 		for (int i = 0; i < n; ++i)
