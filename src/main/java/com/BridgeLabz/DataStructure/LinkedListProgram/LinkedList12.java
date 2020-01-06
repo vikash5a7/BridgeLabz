@@ -61,7 +61,9 @@ Node head;
 				t.setNext(n);
 				
 			}
-			size++;}
+			
+			size++;
+			}
 		
 		
 	}

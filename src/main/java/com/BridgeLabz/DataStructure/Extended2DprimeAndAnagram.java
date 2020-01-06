@@ -2,7 +2,7 @@
  * Purpose :storing the prime number in 2d array
  * @author :vikash kumar
  * @version:1.0
- * @date   :21-11-2019
+ * @date   : 06/1/2020
  * @Filename:TwoDarray.java
  ********************************************************************************************/
 
