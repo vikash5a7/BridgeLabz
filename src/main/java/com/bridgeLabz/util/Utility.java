@@ -8,25 +8,41 @@ public class Utility {
 	// taking a string from the keyboard and return it.
 	public static final Scanner scanner = new Scanner(System.in);
 
+	/****
+	 *  this function is used for taking a string value from the user
+	 *	@return name as value which is enter by the user 
+	 */
 	public static String inputName() {
 		String name;
 		name = scanner.nextLine();
 		return name;
 	}
 
-	// taking a integer from the keyboard and return it.
+	
+	/****
+	 * taking a integer from the keyboard and return it.
+	 *	@return it's returning a number which is pass by the user
+	 */
+	
 	public static int inputNumber() {
 		return scanner.nextInt();
 
 	}
 
-	// taking a double from the keyboard and return it.
+	/****
+	 * taking a double value from the keyboard and return it.
+	 *	@return it's returning a double value which is pass by the user
+	 */
+	
 	public static double inputDouble() {
 		return scanner.nextDouble();
 
 	}
-
-	// count number of digit in number
+	/****
+	 *  this function is used for the finding total number of digit
+	 *  @param num
+	 *	@return count as number of digit in the number
+	 */
 	public static int numberOfDigit(int num) {
 		int count = 0;
 		while (num != 0) {
