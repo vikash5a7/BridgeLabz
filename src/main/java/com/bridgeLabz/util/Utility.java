@@ -584,6 +584,38 @@ public class Utility {
 	            return (Arrays.equals(arr1, arr2));
 	        }
 	    }
-	
-	
+	 
+	 /**
+		 * to check the values are anagrams or not
+		 * 
+		 * @param n1
+		 * @param n2
+		 * @return
+		 */
+		public static boolean anagram(int n1, int n2) {
+			int[] n1count = count(n1);
+			int[] n2count = count(n2);
+			for (int i = 0; i < n2count.length; i++) {
+				if (n1count[i] != n2count[i]) {
+					return false;
+				}
+			}
+			return true;
+		}
+		/**
+		 * Function to count the value in given integer be place
+		 * 
+		 * @param n the integer value to count
+		 * @return the integer array for the count value
+		 */
+		public static int[] count(int n) {
+			int[] count = new int[10];
+			int temp = n;
+			while (temp != 0) {
+				int r = temp % 10;
+				count[r]++;
+				temp = temp / 10;
+			}
+			return count;
+		}
 }

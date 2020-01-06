@@ -2,7 +2,7 @@
  * Purpose :storing the prime number in 2d array
  * @author :vikash kumar
  * @version:1.0
- * @date   :01/01/2020
+ * @date   :21-11-2019
  * @Filename:TwoDarray.java
  ********************************************************************************************/
 
@@ -10,7 +10,7 @@ package com.BridgeLabz.DataStructure;
 
 import com.bridgeLabz.util.Utility;
 
-public class TwoDPrime {
+public class Extended2DprimeAndAnagram {
 
 	public static void main(String[] args) {
 		int[][] array=new int[10][100];
@@ -51,6 +51,9 @@ public class TwoDPrime {
 			}
 			System.out.println("\n");
 		}
+		
+		
+		// for checking anagram 
 		for(int i = 0 ; i<10 ; i++) {
 			for(int j = 0 ; j<100;j++) {
 				if(prime[i][j]!=-1) {
