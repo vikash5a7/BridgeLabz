@@ -17,6 +17,11 @@ public class StudentList {
 		st.forEach(s -> System.out.println(s));
 		System.out.println();
 		st.forEach(System.out::println);
+		System.out.println();
+		
+		for (Student student : st) {
+			System.out.println(student);
+		}
 
 	}
 
