@@ -14,7 +14,7 @@ public class ParralelStream {
 		list.add(new Student("sk", 193));
 		list.add(new Student("radha", 112));
 		
-		// it's give in unordered way:
+		// it's give in unordered way: but process will fast:
 		Stream<Student> stream= list.parallelStream();
 //		stream.forEach(System.out::println);
 		stream.forEach(s-> doProcess(s));
