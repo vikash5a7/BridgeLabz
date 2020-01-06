@@ -2,7 +2,7 @@ package com.BridgeLabz.java8feature;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+//import java.util.function.Consumer;
 
 public class StudentList {
 
@@ -13,6 +13,7 @@ public class StudentList {
 		st.add(new Student("rakesh", 12));
 		st.add(new Student("vikash", 12));
 
+		
 		st.forEach(s -> System.out.println(s));
 		System.out.println();
 		st.forEach(System.out::println);
