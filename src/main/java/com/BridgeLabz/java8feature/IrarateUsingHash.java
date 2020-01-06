@@ -34,6 +34,10 @@ public class IrarateUsingHash {
 		
 		
 		
+		System.out.println("-----using lamda function printing:-----------");
+		
+		map.forEach((k,v)-> System.out.println(k+"\t"+v));
+		
 		
 		
 		
