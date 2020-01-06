@@ -18,6 +18,7 @@ public class StreamOperation {
 		// we can perform above operation in one line
 		long count = l.stream().distinct().count();
 		System.out.println(count);
+		
 	}
 
 }
