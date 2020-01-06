@@ -606,7 +606,7 @@ public class Utility {
 	 * @return fact
 	 */
 
-	public int factorial(int num) {
+	public static int factorial(int num) {
 		int fact = 1;
 		if (num == 0)
 			return 1;
