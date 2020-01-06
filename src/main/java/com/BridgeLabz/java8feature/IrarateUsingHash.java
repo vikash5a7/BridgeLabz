@@ -22,6 +22,22 @@ public class IrarateUsingHash {
 			System.out.println(entry.getValue());
 		}
 		
+		System.out.println("..................................amothe way.............");
+		
+		
+		Set<Integer> keyset = map.keySet();
+		for (Integer key : keyset) {
+			System.out.print(key);
+			System.out.println(map.get(key));
+			
+		}
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
