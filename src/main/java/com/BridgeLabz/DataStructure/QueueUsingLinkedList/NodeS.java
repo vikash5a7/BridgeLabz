@@ -15,7 +15,7 @@ public class NodeS {
 		this.next = next;
 	}
 
-	/*Getter and setter.....*/
+	/****Getter and setter.....*/
 
 	public String getData() {
 		return data;

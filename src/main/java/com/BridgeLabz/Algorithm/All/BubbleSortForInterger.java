@@ -1,4 +1,4 @@
-package sortingAlogorithm;
+package com.BridgeLabz.Algorithm.All;
 
 import com.bridgeLabz.util.Utility;
 

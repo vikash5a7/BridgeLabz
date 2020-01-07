@@ -1,4 +1,4 @@
-package sortingAlogorithm;
+package sortingAlogorithm.copy;
 
 import com.bridgeLabz.util.Utility;
 
