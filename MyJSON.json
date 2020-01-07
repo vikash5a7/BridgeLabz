@@ -1,1 +1,9 @@
-{"Course":["java","JSP","Servlet"],"Name":"vikash","Location":"India"}
+{
+	"Course": [
+		"java",
+		"JSP",
+		"Servlet"
+	],
+	"Name": "vikash",
+	"Location": "India"
+}

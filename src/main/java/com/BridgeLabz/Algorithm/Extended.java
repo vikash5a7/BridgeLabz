@@ -11,7 +11,7 @@ package com.BridgeLabz.Algorithm;
 public class Extended {
 	public static void main(String args[]) {
 		int r, sum = 0, temp;
-		int n = 454;// It is the number variable to be checked for palindrome
+		int n = 454;
 
 		temp = n;
 		while (n > 0) {
