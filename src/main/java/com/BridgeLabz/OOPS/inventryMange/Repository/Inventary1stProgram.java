@@ -13,12 +13,12 @@ public class Inventary1stProgram {
 	{
 		System.out.println(weatDetails.toJSONString());
 		String weatsName = (String) weatDetails.get("Name");
-		System.out.println("Wheat Name: " + weatsName);
+		System.out.println("Name Of Inventary: " + weatsName);
 		Double pricePerKg = (Double) weatDetails.get("PricePerKg");
-		System.out.println("Price of Wheat: " + pricePerKg);
+		System.out.println("Price per kilogram : " + pricePerKg);
 		Double weight = (Double) weatDetails.get("Weight");
-		System.out.println("Total Weight of Wheat " + weight);
-		System.out.println("Total cost of Weat-> " + pricePerKg * weight);
+		System.out.println("Total Weight is " + weight);
+		System.out.println("Total cost:- " + pricePerKg * weight);
 	}
 
 	public static void readFile() {
