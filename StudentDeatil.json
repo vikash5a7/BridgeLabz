@@ -1,0 +1,13 @@
+{
+	"StudentDetails": {
+		"Name": "Ram",
+		"class": 5,
+		"Section": "A",
+		"rollno": 12,
+		"subject": [
+			"math",
+			"physics",
+			"Chemistry"
+		]
+	}
+}

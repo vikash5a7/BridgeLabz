@@ -1,28 +1,19 @@
 {
-	"Rice": {
-		"Rate": 30,
-		"Weight": 3,
-		"Name": "noraml"
-	}
-},
-{
-	"Rice": {
-		"Rate": 30,
-		"Weight": 4,
-		"Name": "noraml"
-	}
-},
-{
-	"Rice": {
-		"Rate": 30,
-		"Weight": 3,
-		"Name": "ajds"
-	}
-},
-{
-	"Wheats": {
-		"Rate": 50,
-		"Name ": "kasdfasdf",
-		"Weight": 3
+	"Inventary": {
+		"wheat": {
+			"PricePerKg": 60.0,
+			"Weight": 50.0,
+			"Name": "Normal"
+		},
+		"pulses": {
+			"PricePerKg": 70.0,
+			"Weight": 60.0,
+			"Name": "Normal Pulse"
+		},
+		"Rice": {
+			"PricePerKg": 70.0,
+			"Weight": 60.0,
+			"Name": "Normal Rice"
+		}
 	}
 }
