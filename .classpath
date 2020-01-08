@@ -9,5 +9,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="/home/user/Downloads/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/user/Downloads/jackson-core-asl-1.9.1.jar"/>
+	<classpathentry kind="lib" path="/home/user/Downloads/jackson-mapper-asl-1.9.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
