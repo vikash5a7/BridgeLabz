@@ -1,32 +1,27 @@
 package com.BridgeLabz.OOPS;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import com.bridgeLabz.util.Utility;
 
-
 public class Inventary {
-	
+
 	static String fileName;
-	static boolean status= true;
+	static boolean status = true;
+
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		System.out.println("Enter your name please: ");
 		String name1 = Utility.inputName();
 		fileName = name1 + ".json";
-		
-		
+
 		JSONArray inventaryList = new JSONArray();
-		while(status)
-		{
-			
+		while (status) {
+
 			System.out.println("What you want to inssert: \n Press-  1.Rice, 2.Pulses 3. Wheats 4.exit");
 			int choice = Utility.inputNumber();
 			String name;
@@ -85,7 +80,7 @@ public class Inventary {
 				break;
 			case 4:
 				System.out.println("succfully Exit");
-				status=false;
+				status = false;
 				break;
 			default:
 				System.out.println("enter correc choice: ");

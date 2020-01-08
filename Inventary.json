@@ -1,0 +1,28 @@
+{
+	"Rice": {
+		"Rate": 30,
+		"Weight": 3,
+		"Name": "noraml"
+	}
+},
+{
+	"Rice": {
+		"Rate": 30,
+		"Weight": 4,
+		"Name": "noraml"
+	}
+},
+{
+	"Rice": {
+		"Rate": 30,
+		"Weight": 3,
+		"Name": "ajds"
+	}
+},
+{
+	"Wheats": {
+		"Rate": 50,
+		"Name ": "kasdfasdf",
+		"Weight": 3
+	}
+}
