@@ -14,10 +14,12 @@ public class JsonUtil {
 
 	}
 
+	
 	// converting java Object to Json object as string
 	public static String convertJavaToJson(Object obj) {
 		String resultJson = "";
 		try {
+			
 			resultJson = mapper.writeValueAsString(obj);
 		} catch (JsonGenerationException e) {
 			System.out.println("Exception ocured while converting java to json" + e.getMessage());
