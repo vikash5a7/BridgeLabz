@@ -10,12 +10,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class InventaryImplemention {
+	static String filename = "newInventary.json";
 
 	public static void insertIntoFile(String str) {
-		
-		try (FileWriter file = new FileWriter("newInventary.json")) {
-			JSONObject str1=readingFromFile();
-			str = str +str1.toJSONString();
+		try (FileWriter file = new FileWriter(filename)) {
+
 			file.write(str);
 			file.flush();
 
@@ -24,14 +23,14 @@ public class InventaryImplemention {
 		}
 	}
 
-	public static JSONObject readingFromFile() {
-		JSONObject jsonData = null;
+	public static String readingFromFile() {
+		String jsonData = " ";
 		JSONParser parser = new JSONParser();
-		try(FileReader reader=new FileReader("newInventary.json")) {
+		try (FileReader reader = new FileReader(filename)) {
 
 			Object ob = parser.parse(reader);
-			JSONObject jsonObject = (JSONObject) ob;
-			jsonData=jsonObject;
+			Object jsonObject = ob;
+			jsonData = jsonData+ jsonObject.toString();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

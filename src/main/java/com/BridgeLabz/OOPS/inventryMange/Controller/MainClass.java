@@ -5,6 +5,7 @@ import com.BridgeLabz.OOPS.inventryMange.Model.JsonUtil;
 import com.BridgeLabz.OOPS.inventryMange.service.InventaryImplemention;
 
 public class MainClass {
+	static String fileContent= "";
 	public static void main(String[] args) {
 		InventaryClass invenclass= new InventaryClass();
 		invenclass.setNameOfInventary("Rice");
@@ -17,12 +18,15 @@ public class MainClass {
 		invenclass2.setNameOfInventary("Pulses");
 		invenclass2.setInventaryName("Normal");
 		String jsonData = JsonUtil.convertJavaToJson(invenclass);
+		fileContent = InventaryImplemention.readingFromFile();
 		
+		System.out.println(fileContent);
 		String jsonData2 = JsonUtil.convertJavaToJson(invenclass2);
+		fileContent = jsonData2 + InventaryImplemention.readingFromFile();
+		InventaryImplemention.insertIntoFile(fileContent);
+		System.out.println(fileContent);
 		System.out.println(jsonData);
-		InventaryImplemention.insertIntoFile(jsonData);
-		InventaryImplemention.insertIntoFile(jsonData2);
-		System.out.println(InventaryImplemention.readingFromFile());
+		
 		
 	}
 }
