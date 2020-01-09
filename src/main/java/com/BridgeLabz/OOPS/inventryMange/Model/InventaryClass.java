@@ -2,6 +2,15 @@ package com.BridgeLabz.OOPS.inventryMange.Model;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
+@SuppressWarnings("serial")
+@JsonPropertyOrder(value= {
+		"nameOfInventary",
+		"inventaryName",
+		"weaight",
+		"cost"
+})
 public class InventaryClass implements Serializable {
 	private String inventaryName;
 	private String nameOfInventary;

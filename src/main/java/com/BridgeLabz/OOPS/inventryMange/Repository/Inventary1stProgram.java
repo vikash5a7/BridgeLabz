@@ -5,12 +5,9 @@ import java.io.FileReader;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-
 public class Inventary1stProgram {
-	
-	
-	public static void display(JSONObject weatDetails)
-	{
+
+	public static void display(JSONObject weatDetails) {
 		System.out.println(weatDetails.toJSONString());
 		String weatsName = (String) weatDetails.get("Name");
 		System.out.println("Name Of Inventary: " + weatsName);
