@@ -1,7 +1,6 @@
 package com.BridgeLabz.OOPS.inventryMange.Controller;
 
 import com.BridgeLabz.OOPS.inventryMange.Model.InventaryClass;
-import com.BridgeLabz.OOPS.inventryMange.Model.JsonUtil;
 import com.BridgeLabz.OOPS.inventryMange.service.InventaryImplemention;
 
 public class MainClass {
@@ -17,15 +16,15 @@ public class MainClass {
 		invenclass2.setWeaight(89);
 		invenclass2.setNameOfInventary("Pulses");
 		invenclass2.setInventaryName("Normal");
-		String jsonData = JsonUtil.convertJavaToJson(invenclass);
+//		String jsonData = JsonUtil.convertJavaToJson(invenclass);
 		fileContent = InventaryImplemention.readingFromFile();
 		
 		System.out.println(fileContent);
-		String jsonData2 = JsonUtil.convertJavaToJson(invenclass2);
-		fileContent = jsonData2 + InventaryImplemention.readingFromFile();
+//		String jsonData2 = JsonUtil.convertJavaToJson(invenclass2);
+//		fileContent = jsonData2 + InventaryImplemention.readingFromFile();
 		InventaryImplemention.insertIntoFile(fileContent);
 		System.out.println(fileContent);
-		System.out.println(jsonData);
+//		System.out.println(jsonData);
 		
 		
 	}

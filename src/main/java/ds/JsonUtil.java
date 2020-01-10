@@ -1,8 +1,8 @@
 package ds;
 
 import java.io.IOException;
+
 import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -18,7 +18,7 @@ public class JsonUtil {
 	public static String convertJavaToJson(Object obj) {
 		String resultJson = "";
 		try {
-			resultJson = mapper.writeValueAsString(obj);
+			resultJson = (mapper).writeValueAsString(obj);
 		} catch (JsonGenerationException e) {
 			System.out.println("Exception ocured while converting java to json" + e.getMessage());
 		} catch (JsonMappingException e) {
@@ -36,8 +36,6 @@ public class JsonUtil {
 		T result = null;
 		try {
 			result = mapper.readValue(jsonString, cls);
-		} catch (JsonParseException e) {
-			System.out.println("Exception is occured during the converting Json to java " + e.getMessage());
 		} catch (JsonMappingException e) {
 			System.out.println("Exception is occured during the converting Json to java " + e.getMessage());
 
