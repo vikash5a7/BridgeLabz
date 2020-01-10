@@ -8,6 +8,9 @@ import com.bridgeLabz.util.Utility;
 public class ServicesImpl {
 	private static String PATH_DOCTOR = "/home/mobicomp/eclipse-workspace/BridgeLabz/src/main/java/com/BridgeLabz/OOPS/Clinic/Repostary/doctor.json";
 
+	
+	JSONArray jsonArray = new JSONArray();
+	JSONObject ob = new JSONObject();
 	@SuppressWarnings("unchecked")
 	public void addDoctor() {
 		Doctor doctor = new Doctor();
@@ -28,17 +31,21 @@ public class ServicesImpl {
 		String availability = Utility.inputNames();
 		doctor.setAvailability(availability);
 		
-		JSONObject ob = new JSONObject();
-		
 		ob.put("name", doctor.getName());
 		ob.put("id", doctor.getId());
 		ob.put("Specilization", doctor.getSpecilization());
 		ob.put("Availability", doctor.getAvailability());
 		
-		JSONArray doctorList = new JSONArray();
-		doctorList.add(ob);
-		System.out.println(doctorList.toJSONString());
-		UtilityClinic.writeOnFile("PATH_DOCTOR", doctorList);
+		
+		
+		JSONObject object = new JSONObject();
+		
+		
+		
+		
+		
+		
+		UtilityClinic.writeOnFile("doctor.json", ob);
 
 	}
 
@@ -72,7 +79,7 @@ public class ServicesImpl {
 		patientList.add(ob);
 		
 		System.out.println(patientList.toJSONString());
-		UtilityClinic.writeOnFile("patient.json", patientList);
+//		UtilityClinic.writeOnFile("patient.json", patientList);
 
 	}
 
