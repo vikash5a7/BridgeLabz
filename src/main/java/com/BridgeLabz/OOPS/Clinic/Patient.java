@@ -10,7 +10,7 @@ package com.BridgeLabz.OOPS.Clinic;
 public class Patient {
 	
 	private String name;
-	private int ID;
+	private String ID;
 	private double mobile;
 	private int age;
 	public String getName() {
@@ -19,11 +19,11 @@ public class Patient {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getID() {
+	public String getID() {
 		return ID;
 	}
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(String string) {
+		ID = string;
 	}
 	public double getMobile() {
 		return mobile;

@@ -7,80 +7,87 @@ import com.bridgeLabz.util.Utility;
 
 public class ServicesImpl {
 	private static String PATH_DOCTOR = "/home/mobicomp/eclipse-workspace/BridgeLabz/src/main/java/com/BridgeLabz/OOPS/Clinic/Repostary/doctor.json";
-
-	
+	Doctor doctor = new Doctor();
+	private String doctorPath = "doctor.json";
+	private String patientPath = "patient.json";
 	JSONArray jsonArray = new JSONArray();
+	JSONObject jsonObject = new JSONObject();
 	JSONObject ob = new JSONObject();
+
 	@SuppressWarnings("unchecked")
-	public void addDoctor() {
-		Doctor doctor = new Doctor();
-		
-		System.out.println("Enter Id of Doctor ");
-		int doctorId = Utility.inputNumber();
-		doctor.setId(doctorId);
+	public void doctorDetails() {
 
-		System.out.println("enter doctor name: ");
+		jsonArray = UtilityClinic.readData(doctorPath);
+
+		Doctor doctorDetails = new Doctor();
+		System.out.println("Enter Doctor Name");
 		String doctorName = Utility.inputNames();
-		doctor.setName(doctorName);
+		if (Utility.isStringOnlyAlphabet(doctorName)) {
+			doctorDetails.setName(doctorName);
+		}
 
-		System.out.println("Enter doctor Specilization");
-		String doctorSpecilization = Utility.inputNames();
-		doctor.setSpecilization(doctorSpecilization);
+		System.out.println("Enter Doctor Specialization");
+		String specialization = Utility.inputString();
+		if (Utility.isStringOnlyAlphabet(specialization)) {
+			doctorDetails.setSpecilization(specialization);
+		}
 
-		System.out.println("Enter Availability ");
-		String availability = Utility.inputNames();
-		doctor.setAvailability(availability);
-		
-		ob.put("name", doctor.getName());
-		ob.put("id", doctor.getId());
-		ob.put("Specilization", doctor.getSpecilization());
-		ob.put("Availability", doctor.getAvailability());
-		
-		
-		
-		JSONObject object = new JSONObject();
-		
-		
-		
-		
-		
-		
-		UtilityClinic.writeOnFile("doctor.json", ob);
+		System.out.println("Enter Doctor Availability");
+		String availability = Utility.inputString();
+		if (Utility.isStringOnlyAlphabet(availability)) {
+			doctorDetails.setAvailability(availability);
+		}
+
+		doctorDetails.setId(Utility.doctorId());
+		doctorDetails.setNumberOfPatients(0);
+
+		jsonObject.put("Id", doctorDetails.getId());
+		jsonObject.put("Name", doctorDetails.getName());
+		jsonObject.put("Specialization", doctorDetails.getSpecilization());
+		jsonObject.put("Availability", doctorDetails.getAvailability());
+		jsonObject.put("Patients", doctorDetails.getNumberOfPatients());
+
+		jsonArray.add(jsonObject);
+
+		System.out.println(jsonArray);
+		UtilityClinic.writeData(doctorPath, jsonArray);
 
 	}
 
 	@SuppressWarnings("unchecked")
-	public static void addPatient() {
-		Patient patient = new Patient();
-		System.out.println("enter Patients name: ");
-		String patientName = Utility.inputNames();
-		patient.setName(patientName);
+	public void patientDetailsNew(String id, String doctorId) {
 
-		System.out.println("Enter Id of Doctor ");
-		int patientId = Utility.inputNumber();
-		patient.setID(patientId);
+		JSONArray jsonArray = UtilityClinic.readData(patientPath);
 
-		System.out.println("Enter your phone number ");
-		double PphoneNumber = Utility.inputDouble();
-		patient.setMobile(PphoneNumber);
+		Patient patientDetails = new Patient();
+		System.out.println("Enter Patient Name");
+		String patientName = Utility.inputString();
+		if (Utility.isStringOnlyAlphabet(patientName)) {
+			patientDetails.setName(patientName);
+		}
 
-		System.out.println("enter your age ");
-		int patientAge = Utility.inputNumber();
-		patient.setAge(patientAge);
+		System.out.println("Enter Mobile Number");
+		String mobile = Utility.inputString();
+		if (Utility.mobileNumberValidator(mobile)) {
+			System.out.println("Mobile :" + mobile);
+			patientDetails.setMobile(Long.parseLong(mobile));
+		}
 
-		JSONObject ob = new JSONObject();
-		ob.put("name", patient.getName());
-		ob.put("id", patient.getID());
-		ob.put("Mobile", patient.getMobile());
-		ob.put("Age", patient.getAge());
-		
-		JSONArray patientList = new JSONArray();
-		
-		patientList.add(ob);
-		
-		System.out.println(patientList.toJSONString());
-//		UtilityClinic.writeOnFile("patient.json", patientList);
+		System.out.println("Enter Age");
+		int age = Utility.inputInteger();
+		patientDetails.setAge(age);
 
+		patientDetails.setID(Utility.patientId());
+
+		jsonObject.put("Id", patientDetails.getID());
+		jsonObject.put("Name", patientDetails.getName());
+		jsonObject.put("Mobile", patientDetails.getMobile());
+		jsonObject.put("Age", patientDetails.getAge());
+		jsonObject.put("Doctor Id", doctorId);
+
+		jsonArray.add(jsonObject);
+		// System.out.println(jsonArray);
+		UtilityClinic.writeData(patientPath, jsonArray);
 	}
 
 }

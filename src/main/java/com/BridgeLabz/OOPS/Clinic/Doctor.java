@@ -2,9 +2,18 @@ package com.BridgeLabz.OOPS.Clinic;
 
 public class Doctor {
 	private String name;
-	private int id;
+	private String id;
 	private String Specilization;
 	private String Availability;
+	private long numberOfPatients;
+
+	public long getNumberOfPatients() {
+		return numberOfPatients;
+	}
+
+	public void setNumberOfPatients(long numberOfPatients) {
+		this.numberOfPatients = numberOfPatients;
+	}
 
 	@Override
 	public String toString() {
@@ -20,11 +29,11 @@ public class Doctor {
 		this.name = name;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
