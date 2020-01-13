@@ -10,7 +10,7 @@ package com.BridgeLabz.OOPS.Clinic;
 import com.bridgeLabz.util.Utility;
 
 /**
- * @author mobicomp
+ * @author vikash kumar
  *
  */
 public class Controller {
@@ -22,7 +22,13 @@ public class Controller {
 	public static void main(String[] args) {
 
 		System.out.println("-----Welcome to Clinic------------");
-		mainController();
+
+		try {
+			mainController();
+		} catch (Exception e) {
+			System.out.println("Enter valid Input please");
+			mainController();
+		}
 	}
 
 	static void mainController() {
@@ -53,10 +59,11 @@ public class Controller {
 		}
 
 	}
-/**
- *  Doctor menu
- * 
- */
+
+	/**
+	 * Doctor menu
+	 * 
+	 */
 	private static void doctorMenu() {
 
 		System.out.println("1. Add Doctor \n2. Search Doctor\n3. Take appoiment\n4. exit ");
@@ -87,20 +94,18 @@ public class Controller {
 
 	}
 
+	// patient working
 	private static void patientInput() {
 		System.out.println("Search patient by:");
 		System.out.println("1. Name");
 		System.out.println("2. ID");
 		System.out.println("3. Mobile Number");
 		String choice = Utility.inputString();
-		if (Utility.intChecker(choice)) {
-			patientChoice(choice);
-		} else {
-			System.out.println("Enter numbers only");
-			searchDoctor();
-		}
+		patientChoice(choice);
+
 	}
 
+	// patient choice
 	private static void patientChoice(String choice) {
 		switch (choice) {
 		case "1":
@@ -123,6 +128,7 @@ public class Controller {
 		}
 	}
 
+	// searching doctor based on their name, id and specialization
 	public static void searchDoctor() {
 		System.out.println("Search doctor by:");
 		System.out.println("1. Name");
@@ -133,6 +139,7 @@ public class Controller {
 		doctorSearchBy(choice);
 
 	}
+	// searching based on their choice
 
 	public static void doctorSearchBy(String choice) {
 		switch (choice) {
@@ -158,9 +165,10 @@ public class Controller {
 		}
 	}
 
+	// patient working functionality
 	private static void patientMenu() {
 
-		System.out.println("1. Add Patient \n2. Search Doctor\n 3. Take appoiment\n4. Search Patient\n5. exit ");
+		System.out.println("1. Add Patient \n2. Search Doctor\n3. Take appoiment\n4. Search Patient\n5. exit ");
 		int choice = Utility.inputNumber();
 		switch (choice) {
 		case 1:
