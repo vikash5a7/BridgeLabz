@@ -661,6 +661,7 @@ public class Utility {
 	}
 	
 	public static void quit() {
+		System.out.println("THANK YOU HAVE A NICE DAY !!");
 		System.exit(0);
 
 	}
