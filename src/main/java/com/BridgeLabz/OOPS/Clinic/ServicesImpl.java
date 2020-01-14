@@ -18,7 +18,6 @@ public class ServicesImpl {
 	private String appointmentPath = "appoint.json";
 	JSONArray jsonArray = new JSONArray();
 	JSONObject jsonObject = new JSONObject();
-	JSONObject ob = new JSONObject();
 	Controller controller = new Controller();
 
 	@SuppressWarnings("unchecked")
@@ -100,17 +99,14 @@ public class ServicesImpl {
 	@SuppressWarnings("rawtypes")
 	public void readDoctorData(String key, String value, String choice) {
 
-		// adds json data to json array
 		jsonArray = (JSONArray) UtilityClinic.readData(doctorPath);
-		// iterator to iterate json data
+
 		Iterator iterator = jsonArray.iterator();
-		// json objects top store json data from array
+
 		JSONObject jsonObject, lastJasonObject = null;
 
-		// iterates over json array
 		while (iterator.hasNext()) {
-			// checks if data given by user matches with any json object
-			// and if present prints it
+
 			if ((jsonObject = (JSONObject) iterator.next()).get(key).equals(value)) {
 				lastJasonObject = jsonObject;
 				System.out.println("\nDoctor Information:");
@@ -134,13 +130,14 @@ public class ServicesImpl {
 		Controller.doctorSearchBy(choice);
 	}
 
-	@SuppressWarnings("unchecked") 
+	@SuppressWarnings("unchecked")
 	public void makeAppointment(JSONObject doctorJsonObject) {
 		String patientId = "";
 		String doctorId = (String) doctorJsonObject.get("Id");
 		long patients = (long) doctorJsonObject.get("Patients");
 		if (patients >= 5) { // doctor is busy
-			System.out.println("Sorry!!! Doctor Not available for today. Do you want to take an appointment tomorrow[y/n]");
+			System.out.println(
+					"Sorry!!! Doctor Not available for today. Do you want to take an appointment tomorrow[y/n]");
 			// current date
 			LocalDate today = LocalDate.now();
 
@@ -179,12 +176,12 @@ public class ServicesImpl {
 		else {
 //			JSONArray jsonArray = UtilityClinic.readData(appointmentPath);
 			LocalDate today = LocalDate.now();
-			 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-			 LocalDateTime now = LocalDateTime.now();
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+			LocalDateTime now = LocalDateTime.now();
 			patientId = Utility.patientId();
 			// updates patient json file
 			addPatients(patientId, doctorId);
-			
+
 			doctorJsonObject.put("Patients", patients + 1);
 			updateDoctorData(doctorJsonObject);
 			JSONObject jsonObject = new JSONObject();
@@ -196,7 +193,8 @@ public class ServicesImpl {
 			jsonArray.add(jsonObject);
 			System.out.println();
 			UtilityClinic.writeData(appointmentPath, jsonArray);
-			System.out.println("Congratulation You got an appointment on "+ today +" Your Patient ID is " + patientId + "\n");
+			System.out.println(
+					"Congratulation You got an appointment on " + today + " Your Patient ID is " + patientId + "\n");
 			Controller.mainController();
 		}
 
@@ -230,6 +228,7 @@ public class ServicesImpl {
 		@SuppressWarnings("rawtypes")
 		Iterator iterator = jsonArray.iterator();
 		JSONObject jsonObject;
+
 		while (iterator.hasNext()) {
 			if ((jsonObject = (JSONObject) iterator.next()).containsValue(value)) {
 				System.out.println("\nPatient Information:");
