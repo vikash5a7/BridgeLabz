@@ -16,6 +16,10 @@ public class Implementation {
 	StockPortfolio stock = new StockPortfolio();
 	static String PATH_FILE = "stock.json";
 
+	
+	/*
+	 * adding all detail regarding Stock
+	 */
 	@SuppressWarnings("unchecked")
 	public void addDetails() {
 		System.out.println("Enter Stock name ");
@@ -41,6 +45,10 @@ public class Implementation {
 		jArray = UtilityClinic.readData(PATH_FILE);
 	}
 
+	
+	/*
+	 * displaying all the deatails  
+	 */
 	public void displayData() {
 		System.out.println("--------Details----------");
 		System.out.println("Name \t Share \t Price \t Value");
