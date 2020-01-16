@@ -5,7 +5,6 @@ import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import com.BridgeLabz.JSON.Obj;
 import com.BridgeLabz.OOPS.AdressBook.UtilForAddressBook;
 import com.BridgeLabz.OOPS.Clinic.UtilityClinic;
 import com.bridgeLabz.util.Utility;

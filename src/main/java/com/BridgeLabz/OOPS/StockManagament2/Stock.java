@@ -1,25 +1,40 @@
 package com.BridgeLabz.OOPS.StockManagament2;
 
+import java.io.File;
+
 import com.bridgeLabz.util.Utility;
 
 public class Stock {
 	static Implementation stockImpl = new Implementation();
-
+	static File file;
+	static String FILE_PATH = "CompanyList.json";
 	public static void main(String[] args) {
-		System.out.println("----------------Stock-------------");
-		System.out.println("enter how many Stock ?");
-		int stockNumber = Utility.inputNumber();
-		menu(stockNumber);
-		stockImpl.displayData();
-
+		Menu();
+	
 	}
-
-	private static void menu(int stockNumber) {
-		for (int i = 1; i <= stockNumber; i++) {
-			System.out.println("Enter Deatail for Stock Number -> " + i);
-			stockImpl.addDetails();
+	private static void Menu() {
+		System.out.println("----------------Stock Managaments-------------");
+		System.out.println("Enter Your Choice\n1. Add Company Details"
+				+ " \n2. Remove Comapny Details ");
+		String Choice = Utility.inputNames();
+		switch (Choice) {
+		case "1":
+			file = new File(FILE_PATH);
+			stockImpl.stockAccount(file);
+			Menu();
+			break;
+		case "2":
+			System.out.println("Enter Company symbol");
+//			String symbol = Utility.inputNames();
+			stockImpl.removeCompanyDetails();
+			Menu();
+			
+		default:
+			break;
 		}
-
+		
 	}
 
+	
 }
+

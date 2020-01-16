@@ -1,15 +1,26 @@
 package com.BridgeLabz.OOPS.StockManagament2;
 
-/**
- * @author vikash kumar
- * @version 1.1
- * @date 13-01-2020
- *
- */
-public class StockPortfolio {
+public class Company {
 	private String stockNames;
 	private int numberOfShare;
 	private double sharePrice;
+	private String companySymbol;
+	private String date;
+	public String getCompanySymbol() {
+		return companySymbol;
+	}
+
+	public void setCompanySymbol(String companySymbol) {
+		this.companySymbol = companySymbol;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 	public String getStockNames() {
 		return stockNames;
@@ -34,7 +45,7 @@ public class StockPortfolio {
 	public void setSharePrice(double sharePrice) {
 		this.sharePrice = sharePrice;
 	}
-	
+
 	public double getPrice() {
 		return numberOfShare * sharePrice;
 	}
