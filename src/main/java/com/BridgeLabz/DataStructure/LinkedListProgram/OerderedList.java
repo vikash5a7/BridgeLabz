@@ -10,7 +10,7 @@ public class OerderedList {
 	
 		public static void main(String[] args) throws IOException {
 			
-			 LinkedList12 list=new LinkedList12();
+			 LinkedList list=new LinkedList();
 			File file = new File("/home/user/Desktop/names.txt");
 			Scanner sc = new Scanner(file);
 			try {

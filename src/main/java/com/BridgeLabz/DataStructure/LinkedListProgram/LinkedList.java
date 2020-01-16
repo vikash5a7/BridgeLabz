@@ -1,10 +1,10 @@
 package com.BridgeLabz.DataStructure.LinkedListProgram;
 
-public class LinkedList12 {
+public class LinkedList {
 	private int size;
 	private Node start;
 
-	public LinkedList12() {
+	public LinkedList() {
 		size = 0;
 		start = null;
 	}

@@ -8,7 +8,7 @@
 
 package com.BridgeLabz.DataStructure;
 
-import com.BridgeLabz.DataStructure.LinkedListProgram.LinkedList12;
+import com.BridgeLabz.DataStructure.LinkedListProgram.LinkedList;
 import com.bridgeLabz.util.Utility;
 
 public class CalenderUsingLL {
@@ -17,8 +17,8 @@ public class CalenderUsingLL {
 		int year = 2020;
 		int month = 2;
 
-		LinkedList12 list = new LinkedList12();
-		LinkedList12 list2 = new LinkedList12();
+		LinkedList list = new LinkedList();
+		LinkedList list2 = new LinkedList();
 		String[] week = { "", "S", "M", "T", "W", "T", "F", "S" };
 		String[] monthDays = { " ","31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31" };
 		for (int i = monthDays.length - 1; i > 0; i--) {

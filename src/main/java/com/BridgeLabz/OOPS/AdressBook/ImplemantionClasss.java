@@ -86,8 +86,7 @@ public class ImplemantionClasss implements ImplemantionMethod {
 						"Full Adress- " + " " + ob.get("Address") + " " + ob.get("City") + " " + ob.get("State"));
 				System.out.println("Zip code" + ob.get("Zip"));
 
-			} else {
-				System.out.println("No More For Search: ");
+			
 			}
 		}
 	}
@@ -140,6 +139,29 @@ public class ImplemantionClasss implements ImplemantionMethod {
 		}
 		Collections.sort(ar);
 		System.out.println(ar);
+
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void updateDoctorData(JSONObject doctorJsonObject) {
+
+		jsonArray = UtilityClinic.readData(FilePath);
+
+		JSONArray updatedArray = new JSONArray(); // new array with updated elements
+		@SuppressWarnings("rawtypes")
+		Iterator iterator = jsonArray.iterator();
+
+		// iterates over array
+		while (iterator.hasNext()) {
+			JSONObject object = (JSONObject) iterator.next();
+			if (object.get("Id").equals(doctorJsonObject.get("Id"))) {
+				updatedArray.add(doctorJsonObject);
+			} else {
+				updatedArray.add(object);
+			}
+		}
+
+		UtilityClinic.writeData(FilePath, updatedArray);
 
 	}
 

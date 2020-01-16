@@ -4,7 +4,7 @@ import com.bridgeLabz.util.Utility;
 
 public class Test {
 	public static void main(String[] args) {
-		LinkedList12 list = new LinkedList12();
+		LinkedList list = new LinkedList();
 		boolean flag= true;
 		while (flag) {
 			System.out.println("1. ADD ITEM AT START:\n2. ADD ITEM AT POSITION: \n3. ADD ITEM AT LAST POSITION"

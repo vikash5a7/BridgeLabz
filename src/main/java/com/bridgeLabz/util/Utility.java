@@ -822,7 +822,7 @@ public class Utility {
 
 	public static String doctorId() {
 		String output = "";
-		String doctorId = "DOC";
+		String doctorId = "DOCTOR";
 		for (int i = 0; i < 3; i++) {
 			output += random.nextInt(10);
 		}
@@ -833,7 +833,7 @@ public class Utility {
 
 	public static String patientId() {
 		String output = "";
-		String patints = "PAT";
+		String patints = "PATIENT";
 		for (int i = 0; i < 3; i++) {
 			output += random.nextInt(10);
 		}

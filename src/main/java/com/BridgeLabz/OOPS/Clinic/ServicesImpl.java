@@ -11,11 +11,10 @@ import org.json.simple.JSONObject;
 import com.bridgeLabz.util.Utility;
 
 public class ServicesImpl {
-	private static String PATH_DOCTOR = "/home/mobicomp/eclipse-workspace/BridgeLabz/src/main/java/com/BridgeLabz/OOPS/Clinic/Repostary/doctor.json";
 	Doctor doctor = new Doctor();
-	private String doctorPath = "doctor.json";
-	private String patientPath = "patient.json";
-	private String appointmentPath = "appoint.json";
+	private String DOCTOR_PATH = "doctor.json";
+	private String PATIENT_PATH = "patient.json";
+	private String APPOINTMENT_PATH = "appoint.json";
 	JSONArray jsonArray = new JSONArray();
 	JSONObject jsonObject = new JSONObject();
 	Controller controller = new Controller();
@@ -23,7 +22,7 @@ public class ServicesImpl {
 	@SuppressWarnings("unchecked")
 	public void addDoctor() {
 
-		jsonArray = UtilityClinic.readData(doctorPath);
+		jsonArray = UtilityClinic.readData(DOCTOR_PATH);
 
 		Doctor doctorDetails = new Doctor();
 		System.out.println("Enter Doctor Name");
@@ -56,14 +55,14 @@ public class ServicesImpl {
 		jsonArray.add(jsonObject);
 
 		System.out.println(jsonArray);
-		UtilityClinic.writeData(doctorPath, jsonArray);
+		UtilityClinic.writeData(DOCTOR_PATH, jsonArray);
 
 	}
 
 	@SuppressWarnings("unchecked")
 	public void addPatients(String id, String doctorId) {
 
-		JSONArray jsonArray = UtilityClinic.readData(patientPath);
+		JSONArray jsonArray = UtilityClinic.readData(PATIENT_PATH);
 
 		Patient patientDetails = new Patient();
 		System.out.println("Enter Patient Name");
@@ -92,14 +91,14 @@ public class ServicesImpl {
 
 		jsonArray.add(jsonObject);
 		// System.out.println(jsonArray);
-		UtilityClinic.writeData(patientPath, jsonArray);
+		UtilityClinic.writeData(PATIENT_PATH, jsonArray);
 	}
 
 	/** Reads doctor's data from json file **/
 	@SuppressWarnings("rawtypes")
 	public void readDoctorData(String key, String value, String choice) {
 
-		jsonArray = (JSONArray) UtilityClinic.readData(doctorPath);
+		jsonArray = (JSONArray) UtilityClinic.readData(DOCTOR_PATH);
 
 		Iterator iterator = jsonArray.iterator();
 
@@ -151,7 +150,7 @@ public class ServicesImpl {
 			String response = Utility.inputString().toString();
 			if (response.equals("y")) {
 
-				JSONArray jsonArray = UtilityClinic.readData(appointmentPath);
+				JSONArray jsonArray = UtilityClinic.readData(APPOINTMENT_PATH);
 				JSONObject jsonObject = new JSONObject();
 				patientId = Utility.patientId();
 				jsonObject.put("DoctorId", doctorId);
@@ -163,7 +162,7 @@ public class ServicesImpl {
 				jsonArray.add(jsonObject);
 				System.out.println();
 
-				UtilityClinic.writeData(appointmentPath, jsonArray);
+				UtilityClinic.writeData(APPOINTMENT_PATH, jsonArray);
 				System.out.println("Congratulation You got an appointment on " + date + ". Your Patient ID is "
 						+ patientId + "\n");
 				Controller.mainController();
@@ -174,7 +173,6 @@ public class ServicesImpl {
 		}
 		// doctor is not busy. Increases number of patients and updates json file
 		else {
-//			JSONArray jsonArray = UtilityClinic.readData(appointmentPath);
 			LocalDate today = LocalDate.now();
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 			LocalDateTime now = LocalDateTime.now();
@@ -192,7 +190,7 @@ public class ServicesImpl {
 			jsonObject.put("AppointmentDate", today);
 			jsonArray.add(jsonObject);
 			System.out.println();
-			UtilityClinic.writeData(appointmentPath, jsonArray);
+			UtilityClinic.writeData(APPOINTMENT_PATH, jsonArray);
 			System.out.println(
 					"Congratulation You got an appointment on " + today + " Your Patient ID is " + patientId + "\n");
 			Controller.mainController();
@@ -203,7 +201,7 @@ public class ServicesImpl {
 	@SuppressWarnings("unchecked")
 	private void updateDoctorData(JSONObject doctorJsonObject) {
 
-		jsonArray = UtilityClinic.readData(doctorPath);
+		jsonArray = UtilityClinic.readData(DOCTOR_PATH);
 
 		JSONArray updatedArray = new JSONArray(); // new array with updated elements
 		@SuppressWarnings("rawtypes")
@@ -219,12 +217,12 @@ public class ServicesImpl {
 			}
 		}
 
-		UtilityClinic.writeData(doctorPath, updatedArray);
+		UtilityClinic.writeData(DOCTOR_PATH, updatedArray);
 
 	}
 
 	public void readPatientData(String key, String value) {
-		jsonArray = UtilityClinic.readData(patientPath);
+		jsonArray = UtilityClinic.readData(PATIENT_PATH);
 		@SuppressWarnings("rawtypes")
 		Iterator iterator = jsonArray.iterator();
 		JSONObject jsonObject;
