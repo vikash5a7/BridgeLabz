@@ -175,4 +175,19 @@ public class Implementation {
 
 	}
 
+	public void buyShare(double amount, String symbol, File file2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void sellShare(double amount, String symbol, File file2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void printTransactiolnDetails() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

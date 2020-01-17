@@ -21,9 +21,10 @@ public class ControllerClass {
 		System.out.println("----------------Stock Managaments-------------");
 		System.out.println("Enter Your Choice\n1. Add Company Details"
 				+ " \n2. Remove Comapny Details\n3. Display Company details\n4. Search Company details\n5."
-				+ " Create Account\n6. Exit");
+				+ " Create Account\n6. Buy Share Or Sell Share\n7. Exit.");
 		String Choice = Utility.inputNames();
 		String symbol;
+		String name;
 		switch (Choice) {
 		case "1":
 			file = new File(FILE_PATH);
@@ -49,12 +50,35 @@ public class ControllerClass {
 			break;
 		case "5":
 			System.out.println("Enter Your Name");
-			String name = Utility.inputNames();
+			name = Utility.inputNames();
 			String AccountId = AccountId(name);
 			createAccount(AccountId);
 			Menu();
 			break;
 		case "6":
+			System.out.println("Are You new User ? press -> Y/N");
+			System.out.println("Please Create account.");
+			System.out.println("Enter your name ");
+			String y = Utility.inputNames();
+			if (y.equalsIgnoreCase("Y")) {
+				System.out.println("Enter Your Name");
+				name = Utility.inputNames();
+				String AccountId2 = AccountId(name);
+				createAccount(AccountId2);
+			}
+			else
+			{
+				System.out.println("enter your ID");
+				String fileID= Utility.inputNames();
+				String file = fileID +".json";
+				buyOrSellStock(file);
+				System.out.println();
+			}
+			
+			Menu();
+			break;
+			
+		case "7":
 			Utility.quit();
 
 		default:
@@ -65,9 +89,48 @@ public class ControllerClass {
 
 	}
 
+	public static void buyOrSellStock(File file2) {
+		System.out.println("1. Buy Some Share");
+		System.out.println("2. Sell some Share");
+		System.out.println("3. Print Transaction");
+		System.out.println("4. back to main menu");
+
+		double amount;
+		String symbol;
+
+		String choice = Utility.inputString();
+		switch (choice) {
+		case "1":
+			System.out.println("Enter amount :\nEnter Symbol :");
+			amount = Utility.inputDouble();
+			symbol = Utility.inputString();
+			service.buyShare(amount, symbol, file2);
+			buyOrSellStock(file2);
+			break;
+		case "2":
+			System.out.println("Enter amount :\nEnter Symbol :");
+			amount = Utility.inputDouble();
+			symbol = Utility.inputString();
+			service.sellShare(amount, symbol, file2);
+			buyOrSellStock(file2);
+			break;
+		case "3":
+			service.printTransactiolnDetails();
+			buyOrSellStock(file2);
+			break;
+		case "4":
+			Menu();
+			break;
+		default:
+			Menu();
+			System.out.println("Invalid option");
+		}
+
+	}
+
 	private static void createAccount(String fileName) {
 
-		file = new File("AccontFile/"+fileName + ".json");
+		file = new File("AccontFile/" + fileName + ".json");
 
 		try (FileWriter fileWriter = new FileWriter(file)) {
 
@@ -83,7 +146,7 @@ public class ControllerClass {
 		}
 		System.out.println("Your account is File Name is " + fileName);
 
-//		buyOrSellStock(file);
+		buyOrSellStock(file);
 	}
 
 	public static String AccountId(String name) {
