@@ -4,6 +4,7 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
+import java.util.Set;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -68,13 +69,9 @@ public class Implementation {
 		if (jsonObj1.containsKey(symbol)) {
 
 			System.out.println(jsonObj1.get(symbol));
-			System.out.println(symbol);
-
 			jsonObj2.get(symbol);
-
 			jsonObj1.remove(symbol);
 			jsonObj2.put("STOCK MARKET", jsonObj1);
-
 			UtilityForStock.writeData(FileReader, jsonObj2);
 			System.out.println("Success.....");
 		} else {
@@ -99,6 +96,83 @@ public class Implementation {
 			}
 		}
 		System.out.println("Total Price for the whole Stock-> " + value);
+	}
+
+	public void displayCompanyAccordingToSymbol(String symbol) {
+		JSONObject jsonObject = UtilityForStock.readData(FileReader);
+
+		JSONObject objectOfStock = (JSONObject) jsonObject.get("STOCK MARKET");
+		if (objectOfStock.containsKey(symbol)) {
+			JSONArray innerArray = (JSONArray) objectOfStock.get(symbol);
+			JSONObject innerObject = (JSONObject) innerArray.get(0);
+			
+			
+			System.out.println("*********************Company Details****************************");
+			System.out.println("Company Name    : " + innerObject.get("Company Name"));
+			System.out.println("Share Price     : " + innerObject.get("Share Price"));
+			System.out.println("Number Of Share : " + innerObject.get("Number Of Share"));
+			System.out.println("Company Symbol  : " + innerObject.get("Company Symbol"));
+			System.out.println("Date            : " + innerObject.get("Date"));
+		}else
+		{
+			System.out.println("Company Not Found with this SYMBOL -> " + symbol +" Try with another Symbol");
+		}
+
+	}
+//		Set<?> key = objectOfStock.keySet();
+//		Iterator<?> iterator = key.iterator();
+//		while(iterator.hasNext())
+//		{
+//			
+//		}
+//		System.out.println(objectOfStock.toJSONString());
+//		Object[] Keys = objectOfStock.keySet().toArray();
+//		for (int i = 0; i < Keys.length; i++) {
+//			if (Keys[i].equals(symbol)) {
+//				System.out.println(Keys[i]);
+//				Object object = objectOfStock.get(Keys[i]);
+//
+//				System.out.println(object);
+
+//					System.out.println("Company Name    :" + object[1]);
+//					System.out.println("Number Of Share :" + object.get("Number Of Share"));
+//					System.out.println("Price           :" + object.get("Share Price"));
+//					System.out.println("Company Symbol  :" + object.get("Company Symbol"));
+//					System.out.println("Date            :" + object.get("Date"));
+//					System.out.println();
+
+// }
+
+//		for (Object i : Keys)
+//		{
+//			if (i.equals(symbol)) {
+//				System.out.println(i);
+//				
+//			}
+//		}
+
+	// }
+
+	public void displayCompanyDetail() {
+		JSONObject json = UtilityForStock.readData(FileReader);
+		JSONObject Stock = (JSONObject) json.get("STOCK MARKET");
+		@SuppressWarnings("unused")
+		JSONArray arr = new JSONArray();
+
+		Object[] Keys = Stock.keySet().toArray();
+		for (Object i : Keys) {
+			JSONArray a = (JSONArray) Stock.get(i);
+			for (Object j : a) {
+				JSONObject m = (JSONObject) j;
+				System.out.println("Company Name    :" + m.get("Company Name"));
+				System.out.println("Number Of Share :" + m.get("Number Of Share"));
+				System.out.println("Price           :" + m.get("Share Price"));
+				System.out.println("Company Symbol  :" + m.get("Company Symbol"));
+				System.out.println("Date            :" + m.get("Date"));
+				System.out.println();
+			}
+		}
+
 	}
 
 }

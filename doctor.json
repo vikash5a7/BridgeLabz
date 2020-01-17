@@ -1,1 +1,30 @@
-[{"Availability":"PM","Specialization":"eye","Id":"DOCTOR20","Patients":4,"Name":"vikash"},{"Availability":"AM","Specialization":"leg","Id":"DOCTOR406","Patients":1,"Name":"Ramu"},{"Availability":"AM","Specialization":"lungs","Id":"DOCTOR60","Patients":0,"Name":"Raju"},{"Availability":"Am","Specialization":"Eye","Id":"DOCTOR263","Patients":0,"Name":"Ramu"}]
+[
+	{
+		"Availability": "PM",
+		"Specialization": "eye",
+		"Id": "DOCTOR20",
+		"Patients": 4,
+		"Name": "vikash"
+	},
+	{
+		"Availability": "AM",
+		"Specialization": "leg",
+		"Id": "DOCTOR406",
+		"Patients": 1,
+		"Name": "Ramu"
+	},
+	{
+		"Availability": "AM",
+		"Specialization": "lungs",
+		"Id": "DOCTOR60",
+		"Patients": 0,
+		"Name": "Raju"
+	},
+	{
+		"Availability": "Am",
+		"Specialization": "Eye",
+		"Id": "DOCTOR263",
+		"Patients": 0,
+		"Name": "Ramu"
+	}
+]
