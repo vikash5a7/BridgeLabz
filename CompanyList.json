@@ -1,1 +1,31 @@
-{"STOCK MARKET":{"R":[{"Share Price":45645.0,"Number Of Share":45,"Stock Name":"vikash","Date":"16-01-2020","Compay Symobl":"R"}],"3":[{"Share Price":545.0,"Number Of Share":23,"Stock Name":"asd","Date":"16-01-2020","Compay Symobl":"3"}],"4":[{"Share Price":345.0,"Number Of Share":45,"Stock Name":"wert","Date":"16-01-2020","Compay Symobl":"4"},{"Share Price":345.0,"Number Of Share":45,"Stock Name":"wert","Date":"16-01-2020","Compay Symobl":"4"}],"V":[{"Share Price":356.0,"Number Of Share":35435,"Stock Name":"Ram","Date":"16-01-2020","Compay Symobl":"V"}]}}
+{
+	"STOCK MARKET": {
+		"SONY": [
+			{
+				"Company Name": "RAVI",
+				"Price": 99792,
+				"CompanySymbol": "SONY",
+				"Number Of Share": 1232,
+				"Date": "16-1-2020"
+			}
+		],
+		"SAM": [
+			{
+				"Company Name": "samantha",
+				"Price": 46.0,
+				"Company Symbol": "SAM",
+				"Number OfShare": 56,
+				"Date": "16-1-2020"
+			}
+		],
+		"RAM": [
+			{
+				"Company Name": "vikash",
+				"Share Price": 9935170.17828201,
+				"Company Symbol": "RAM",
+				"Number Of Share": 1226,
+				"Date": "16-1-2020"
+			}
+		]
+	}
+}

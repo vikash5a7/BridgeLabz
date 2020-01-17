@@ -17,19 +17,19 @@ public class Implementation {
 	JSONObject obJson = new JSONObject();
 	JSONArray jsonArray = new JSONArray();
 	Company company = new Company();
-	static String Stock_File = "stock.json";
+	static String Stock_File = "CompanyList.json";
 	File FileReader = new File(Stock_File);
 
 	@SuppressWarnings("unchecked")
 	public void stockAccount(File file) {
-		
+
 		System.out.println("Enter Company Symbol: ");
 		JSONObject fileJson = (JSONObject) UtilityForStock.readData(file);
 		JSONObject json = (JSONObject) fileJson.get("STOCK MARKET");
 
 		String companySymbol = Utility.inputNames();
 		company.setCompanySymbol(companySymbol);
-		
+
 		System.out.println("Enter Stock name ");
 		String stockeNames = Utility.inputNames();
 		company.setStockNames(stockeNames);
@@ -41,83 +41,47 @@ public class Implementation {
 		System.out.println("Enter share Price ");
 		double sharePrice = Utility.inputDouble();
 		company.setSharePrice(sharePrice);
-		
-		
-		 LocalDateTime current = LocalDateTime.now(); 
-		 DateTimeFormatter format =  DateTimeFormatter.ofPattern("dd-MM-yyyy");   
-		 String dateTime = current.format(format); 
-		 company.setDate(dateTime);
-		
-		obJson.put("Stock Name", company.getStockNames());
+
+		LocalDateTime current = LocalDateTime.now();
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		String dateTime = current.format(format);
+		company.setDate(dateTime);
+
+		obJson.put("Company Name", company.getStockNames());
 		obJson.put("Number Of Share", company.getNumberOfShare());
 		obJson.put("Share Price", company.getSharePrice());
 		obJson.put("Date", company.getDate());
-		obJson.put("Compay Symobl", company.getCompanySymbol());
+		obJson.put("Company Symbol", company.getCompanySymbol());
 		jsonArray.add(obJson);
-		
+
 		json.put(company.getCompanySymbol(), jsonArray);
-		
+
 		UtilityForStock.writeData(file, fileJson);
 	}
 
-	
-	
 	@SuppressWarnings("unchecked")
-	public void removeCompanyDetails() {
+	public void removeCompanyDetails(String symbol) {
 		JSONObject jsonObj = UtilityForStock.readData(FileReader);
 		JSONObject jsonObj1 = (JSONObject) jsonObj.get("STOCK MARKET");
-		
-		System.out.println(jsonObj1);
-//		JSONObject jsonObj2 = new JSONObject();
-//
-//		if (jsonObj1.containsKey(symbol)) {
-//			
-//			System.out.println(jsonObj1.get(symbol));
-//			jsonObj1.remove(symbol);
-//			jsonObj2.put("STOCK MARKET", jsonObj1);
-//
-//			UtilityForStock.writeData(FileReader, jsonObj2);
-//			System.out.println("Success.....");
-//		} else {
-//			System.out.println("not found");
-//		}
+		JSONObject jsonObj2 = new JSONObject();
+
+		if (jsonObj1.containsKey(symbol)) {
+
+			System.out.println(jsonObj1.get(symbol));
+			System.out.println(symbol);
+
+			jsonObj2.get(symbol);
+
+			jsonObj1.remove(symbol);
+			jsonObj2.put("STOCK MARKET", jsonObj1);
+
+			UtilityForStock.writeData(FileReader, jsonObj2);
+			System.out.println("Success.....");
+		} else {
+			System.out.println("not found");
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public void displayData() {
 		System.out.println("--------Details----------");
 		System.out.println("Name \t Share \t Price \t Value");

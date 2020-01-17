@@ -25,8 +25,8 @@ public class Stock {
 			break;
 		case "2":
 			System.out.println("Enter Company symbol");
-//			String symbol = Utility.inputNames();
-			stockImpl.removeCompanyDetails();
+			String symbol = Utility.inputNames();
+			stockImpl.removeCompanyDetails(symbol);
 			Menu();
 			
 		default:
