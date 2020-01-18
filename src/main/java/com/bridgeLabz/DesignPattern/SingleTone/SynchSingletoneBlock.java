@@ -5,17 +5,21 @@ package com.bridgeLabz.DesignPattern.SingleTone;
  *  creating two instance of class so for avoiding the creation of two instance we should make them as 
  *  synchronize , this Thread safe 
  *  in one thread complete then only second thread will invoke
- *  it's making whole method as synchronized 
+ *  it's Not making whole method as synchronized 
  */
-public class SynchronizedSinglTon1 {
-	private static SynchronizedSinglTon1 instance;
+public class SynchSingletoneBlock {
+	private static SynchSingletoneBlock instance;
 
-	private SynchronizedSinglTon1() {
+	private SynchSingletoneBlock() {
 	}
 
-	public static synchronized SynchronizedSinglTon1 getIntance() {
+	public static SynchSingletoneBlock getIntance() {
 		if (instance == null) {
-			instance = new SynchronizedSinglTon1();
+			synchronized (SynchSingletoneBlock.class) {
+				if (instance == null) {
+					instance = new SynchSingletoneBlock();
+				}
+			}
 		}
 		return instance;
 	}
