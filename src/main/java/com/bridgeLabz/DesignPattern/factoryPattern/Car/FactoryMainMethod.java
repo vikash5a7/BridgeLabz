@@ -7,5 +7,4 @@ public class FactoryMainMethod {
 		Vehical bike = VehicalFactory.getInstance("Bike", 2);
 		System.out.println("The Number of wheel in bike are "+bike);
 	}
-
 }
