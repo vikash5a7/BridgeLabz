@@ -9,5 +9,5 @@ public class SingleTonEager {
 
 	public static SingleTonEager getInstance() {
 		return instance;
-	}	
+	}
 }
