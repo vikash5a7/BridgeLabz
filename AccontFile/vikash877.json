@@ -1,10 +1,1 @@
-[
-	{
-		"Company Name": "RAVI",
-		"DATE": "17-01-2020",
-		"Share Price": 99792,
-		"Company Symbol": "SONY",
-		"Number Of Share": 7,
-		"Time": 2020-01-17T16:50:08.096631
-	}
-]
+[{"Company Name":"RAVI","DATE":"2020-01-18 15:29:17","Share Price":99792,"Company Symbol":"SONY","Number Of Share":7},{"Company Name":"RAVI","DATE":"2020-01-18 15:29:26","Share Price":99792,"Company Symbol":"SONY","Number Of Share":7},{"Company Name":"RAVI","DATE":"2020-01-18 15:51:18","Share Price":99792,"Company Symbol":"SONY","Number Of Share":7},{"Company Name":"RAVI","DATE":"2020-01-18 15:59:37","Share Price":99792,"Company Symbol":"SONY","Number Of Share":7},{"Company Name":"RAVI","DATE":"2020-01-18 16:03:30","Share Price":99792,"Company Symbol":"SONY","Number Of Share":7},{"Company Name":"RAVI","DATE":"2020-01-18 16:09:04","Share Price":99792,"Company Symbol":"SONY","Number Of Share":7}]

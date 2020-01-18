@@ -11,80 +11,67 @@ public class ControllerClass {
 	static Implementation service = new Implementation();
 	static File file;
 	static String FILE_PATH = "CompanyList.json";
-	final static File folder1 = new File("AccontFile/");
+	static final File folder1 = new File("AccontFile/");
 
 	public static void main(String[] args) {
 		listFilesForFolder(folder1);
-		Menu();
+		menu();
 
 	}
 
-	private static void Menu() {
+	private static void menu() {
 		System.out.println("----------------Stock Managaments-------------");
 		System.out.println("Enter Your Choice\n1. Add Company Details"
 				+ " \n2. Remove Comapny Details\n3. Display Company details\n4. Search Company details\n5."
 				+ " Create Account\n6. Buy Share Or Sell Share\n7. Exit.");
-		String Choice = Utility.inputNames();
+		String choice = Utility.inputNames();
 		String symbol;
 		String name;
-		switch (Choice) {
+		switch (choice) {
 		case "1":
 			file = new File(FILE_PATH);
 			service.stockAccount(file);
-			Menu();
+			menu();
 			break;
 		case "2":
 			System.out.println("Enter Company symbol");
 			symbol = Utility.inputNames();
 			service.removeCompanyDetails(symbol);
-			Menu();
+			menu();
 			break;
 		case "3":
 			System.out.println("Display Company details");
 			service.displayCompanyDetail();
-			Menu();
+			menu();
 			break;
 		case "4":
 			System.out.println("Enter company symbol");
 			symbol = Utility.inputNames();
 			service.displayCompanyAccordingToSymbol(symbol);
-			Menu();
+			menu();
 			break;
 		case "5":
 			System.out.println("Enter Your Name");
 			name = Utility.inputNames();
-			String AccountId = AccountId(name);
-			createAccount(AccountId);
-			Menu();
+			String accountId = accountId(name);
+			createAccount(accountId);
+			menu();
 			break;
 		case "6":
-			System.out.println("Are You new User ? press -> Y/N");
-			System.out.println("Please Create account.");
-			System.out.println("Enter your name ");
-			String y = Utility.inputNames();
-			if (y.equalsIgnoreCase("Y")) {
-				System.out.println("Enter Your Name");
-				name = Utility.inputNames();
-				String AccountId2 = AccountId(name);
-				createAccount(AccountId2);
-			}
-			else
-			{
-				System.out.println("enter your ID");
-				String fileID= Utility.inputNames();
-			
-				System.out.println();
-			}
-			
-			Menu();
+			System.out.println("Enter Your Name");
+			name = Utility.inputNames();
+			String accountId1 = accountId(name);
+			createAccount(accountId1);
+			menu();
 			break;
-			
+
 		case "7":
 			Utility.quit();
+			break;
 
 		default:
 			System.out.println("Invalide........ please Enter Carefully");
-			Menu();
+			menu();
 			break;
 		}
 
@@ -109,8 +96,9 @@ public class ControllerClass {
 			buyOrSellStock(file2);
 			break;
 		case "2":
-			System.out.println("Enter amount :\nEnter Symbol :");
+			System.out.println("Enter amount: ");
 			amount = Utility.inputDouble();
+			System.out.println("Enter Symbol of Company");
 			symbol = Utility.inputString();
 			service.sell(amount, symbol, file2);
 			buyOrSellStock(file2);
@@ -120,10 +108,10 @@ public class ControllerClass {
 			buyOrSellStock(file2);
 			break;
 		case "4":
-			Menu();
+			menu();
 			break;
 		default:
-			Menu();
+			menu();
 			System.out.println("Invalid option");
 		}
 
@@ -150,7 +138,7 @@ public class ControllerClass {
 		buyOrSellStock(file);
 	}
 
-	public static String AccountId(String name) {
+	public static String accountId(String name) {
 		Random random = new Random();
 		String output = "";
 		for (int i = 0; i < 3; i++) {
@@ -160,20 +148,16 @@ public class ControllerClass {
 		return name += outputInt;
 
 	}
-	
-	public static void listFilesForFolder(final File folder) {
-	
-	    for (final File fileEntry : folder1.listFiles()) {
-	        if (fileEntry.isDirectory()) {
-	            listFilesForFolder(fileEntry);
-	        } else {
-	            System.out.println(fileEntry.getName());
-	        }
-	    }
-	}
 
-	
-	
-	
+	public static void listFilesForFolder(final File folder) {
+
+		for (final File fileEntry : folder1.listFiles()) {
+			if (fileEntry.isDirectory()) {
+				listFilesForFolder(fileEntry);
+			} else {
+				System.out.println(fileEntry.getName());
+			}
+		}
+	}
 
 }
