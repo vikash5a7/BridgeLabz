@@ -11,8 +11,10 @@ public class ControllerClass {
 	static Implementation service = new Implementation();
 	static File file;
 	static String FILE_PATH = "CompanyList.json";
+	final static File folder1 = new File("AccontFile/");
 
 	public static void main(String[] args) {
+		listFilesForFolder(folder1);
 		Menu();
 
 	}
@@ -70,8 +72,7 @@ public class ControllerClass {
 			{
 				System.out.println("enter your ID");
 				String fileID= Utility.inputNames();
-				String file = fileID +".json";
-				buyOrSellStock(file);
+			
 				System.out.println();
 			}
 			
@@ -104,14 +105,14 @@ public class ControllerClass {
 			System.out.println("Enter amount :\nEnter Symbol :");
 			amount = Utility.inputDouble();
 			symbol = Utility.inputString();
-			service.buyShare(amount, symbol, file2);
+			service.buy(amount, symbol, file2);
 			buyOrSellStock(file2);
 			break;
 		case "2":
 			System.out.println("Enter amount :\nEnter Symbol :");
 			amount = Utility.inputDouble();
 			symbol = Utility.inputString();
-			service.sellShare(amount, symbol, file2);
+			service.sell(amount, symbol, file2);
 			buyOrSellStock(file2);
 			break;
 		case "3":
@@ -159,5 +160,20 @@ public class ControllerClass {
 		return name += outputInt;
 
 	}
+	
+	public static void listFilesForFolder(final File folder) {
+	
+	    for (final File fileEntry : folder1.listFiles()) {
+	        if (fileEntry.isDirectory()) {
+	            listFilesForFolder(fileEntry);
+	        } else {
+	            System.out.println(fileEntry.getName());
+	        }
+	    }
+	}
+
+	
+	
+	
 
 }
