@@ -1,7 +1,9 @@
 package com.bridgeLabz.DesignPattern.Mediator;
 
 public class Atc implements IAtc{
+	@SuppressWarnings("unused")
 	private Runway runway;
+	@SuppressWarnings("unused")
 	private Flight flight;
 	public boolean available;
 
