@@ -3,10 +3,12 @@ package com.BridgeLabz.AdvJava.JDBC;
 import java.sql.*;
 
 /**
+ * Retrieving all the data from the Database
  * 
  * @author vikash kumar
- *
- */
+ * @version 1.1
+ * @date : 21-01-2020
+*/
 public class JdbcUpdateDemo {
 	static String dbUrl = "jdbc:mysql://localhost:3306/demo";
 	static String user = "root";
