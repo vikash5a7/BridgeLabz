@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.bridgelabz.functional.IntegerAddsToZERO;
+
 class IntegerAddsToZEROTest {
 
 	@Test

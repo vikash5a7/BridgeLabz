@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-import com.BridgeLabz.junniteTesting.VendingMachine;
+import com.bridgelabz.junnitetesting.VendingMachine;
 
 class VendingMachinePTest {
 	/* note are arranging in this order

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.bridgeLabz.util.Utility;
+import com.bridgelabz.util.Utility;
 /*
  *  sorting array using the selectioin sorting: 
  * 

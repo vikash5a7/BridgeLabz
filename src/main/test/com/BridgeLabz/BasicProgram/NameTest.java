@@ -13,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.bridgelabz.basicprogram.Name;
+
 class NameTest {
 
 	@Test

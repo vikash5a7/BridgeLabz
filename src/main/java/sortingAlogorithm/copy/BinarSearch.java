@@ -1,6 +1,6 @@
 package sortingAlogorithm.copy;
 
-import com.bridgeLabz.util.Utility;
+import com.bridgelabz.util.Utility;
 
 public class BinarSearch {
 

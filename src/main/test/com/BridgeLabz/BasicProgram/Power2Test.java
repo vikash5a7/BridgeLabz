@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.bridgelabz.basicprogram.Power2;
+
 
 /*
  * Testing for the power of 2

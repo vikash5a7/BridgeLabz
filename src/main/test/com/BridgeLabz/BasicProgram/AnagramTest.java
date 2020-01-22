@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.BridgeLabz.Algorithm.Anagram;
+import com.bridgelabz.algorithm.Anagram;
 
 class AnagramTest {
 

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.BridgeLabz.BasicProgram.practice.math;
+import com.bridgelabz.basicprogram.practice.math;
 
 class mathTestUnit {
 
