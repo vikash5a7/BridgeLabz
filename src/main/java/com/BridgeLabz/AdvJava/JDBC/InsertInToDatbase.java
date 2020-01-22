@@ -40,7 +40,7 @@ public class InsertInToDatbase {
 
 			// 4. Verify this by getting a list of employees
 			MYRESULTS = MYSTATEMENTS.executeQuery("select * from employees order by last_name");
-			System.out.println("Number of Rows are Effected: "+rowsAffected);
+			System.out.println("Number of Rows are Effected: " + rowsAffected);
 
 			// 5. Process the result set
 			while (MYRESULTS.next()) {
@@ -48,15 +48,6 @@ public class InsertInToDatbase {
 			}
 		} catch (Exception exc) {
 			exc.printStackTrace();
-		} finally {
-			if (MYRESULTS != null) {
-				try {
-					MYRESULTS.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
+		} 
 	}
 }

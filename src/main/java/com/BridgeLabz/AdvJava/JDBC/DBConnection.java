@@ -16,6 +16,7 @@ public class DBConnection {
 	public Connection connection() {
 		try {
 			connection = DriverManager.getConnection(DBURL, USER, PASS);
+			System.out.println("Conection....."+connection);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -23,9 +24,9 @@ public class DBConnection {
 		return connection;
 
 	}
-	private  DBConnection()
-	{
-		
+
+	private DBConnection() {
+
 	}
 
 	public static DBConnection getInstanceOfDb() {
