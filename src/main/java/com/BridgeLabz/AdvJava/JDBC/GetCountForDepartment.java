@@ -1,15 +1,17 @@
 package com.BridgeLabz.AdvJava.JDBC;
-
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Types;
 
 /**
- * Test calling stored procedure with INOUT parameters
+ * Test calling stored procedure with OUT parameters
  * 
  * @author vikash kumar
- * 
- * 
+ *
  */
-public class GreetTheDepartment {
+public class GetCountForDepartment {
 
 	public static void main(String[] args) throws Exception {
 
@@ -20,24 +22,25 @@ public class GreetTheDepartment {
 			// Get a connection to database
 			myConn = DBConnectionDeom1.getInstanceOfDb().connection();
 
-			String theDepartment = "Engineering";
-
+			String theDepartment = "Legal";
+			
 			// Prepare the stored procedure call
-			myStmt = myConn.prepareCall("{call greet_the_department(?)}");
+			myStmt = myConn
+					.prepareCall("{call get_count_for_department(?, ?)}");
 
 			// Set the parameters
-			myStmt.registerOutParameter(1, Types.VARCHAR);
 			myStmt.setString(1, theDepartment);
-
+			myStmt.registerOutParameter(2, Types.INTEGER);
+			
 			// Call stored procedure
-			System.out.println("Calling stored procedure.  greet_the_department('" + theDepartment + "')");
+			System.out.println("Calling stored procedure.  get_count_for_department('" + theDepartment + "', ?)");
 			myStmt.execute();
-			System.out.println("Finished calling stored procedure");
-
-			// Get the value of the INOUT parameter
-			String theResult = myStmt.getString(1);
-
-			System.out.println("\nThe result = " + theResult);
+			System.out.println("Finished calling stored procedure");			
+			
+			// Get the value of the OUT parameter
+			int theCount = myStmt.getInt(2);
+			
+			System.out.println("\nThe count = " + theCount);
 
 		} catch (Exception exc) {
 			exc.printStackTrace();
@@ -54,5 +57,5 @@ public class GreetTheDepartment {
 		if (myConn != null) {
 			myConn.close();
 		}
-	}
+	}	
 }
