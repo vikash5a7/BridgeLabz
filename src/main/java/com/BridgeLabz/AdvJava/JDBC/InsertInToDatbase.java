@@ -10,7 +10,6 @@ package com.BridgeLabz.AdvJava.JDBC;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class InsertInToDatbase {
@@ -45,9 +44,11 @@ public class InsertInToDatbase {
 			// 5. Process the result set
 			while (MYRESULTS.next()) {
 				System.out.println(MYRESULTS.getString("last_name") + ", " + MYRESULTS.getString("first_name"));
+			
 			}
 		} catch (Exception exc) {
 			exc.printStackTrace();
 		} 
+		
 	}
 }

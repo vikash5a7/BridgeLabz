@@ -1,19 +1,18 @@
-
 package com.BridgeLabz.AdvJava.JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBConnection {
+public class DBConnectionDeom1 {
 	private Connection connection = null;
-	private static final String DBURL = "jdbc:mysql://localhost:3306/demo";
+	private static final String DBURL = "jdbc:mysql://localhost:3306/demo1";
 	private static final String USER = "root";
 	private static final String PASS = "VIKASkumar@123";
 
-	private static DBConnection dbConnection;
+	private static DBConnectionDeom1 dbConnection;
 
-	public Connection connection() throws SQLException {
+	public Connection connection(){
 		try {
 			connection = DriverManager.getConnection(DBURL, USER, PASS);
 			System.out.println("DataBase Connect SuccessFully......");
@@ -21,27 +20,23 @@ public class DBConnection {
 			System.out.println("DataBase in Not Connected...");
 			e.printStackTrace();
 		}
-		finally {
-			connection.close();
-		}
 		return connection;
+		
+	}
+
+	private DBConnectionDeom1() {
 
 	}
 
-	private DBConnection() {
-
-	}
-
-	public static DBConnection getInstanceOfDb() {
+	public static DBConnectionDeom1 getInstanceOfDb() {
 		if (dbConnection == null) {
-			synchronized (DBConnection.class) {
+			synchronized (DBConnectionDeom1.class) {
 				if (dbConnection == null) {
-					dbConnection = new DBConnection();
+					dbConnection = new DBConnectionDeom1();
 				}
 			}
 		}
 		return dbConnection;
 
 	}
-
 }
